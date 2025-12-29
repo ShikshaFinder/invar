@@ -1,0 +1,78 @@
+﻿components/devComponents/ai-prompt-box.tsx(3,34): error TS2307: Cannot find module '@radix-ui/react-dialog' or its corresponding type declarations.
+components/devComponents/ai-prompt-box.tsx(5,41): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(1,34): error TS2307: Cannot find module '@react-three/fiber' or its corresponding type declarations.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(2,24): error TS2307: Cannot find module 'three' or its corresponding type declarations.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(112,13): error TS7006: Parameter 'state' implicitly has an 'any' type.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(123,5): error TS2339: Property 'mesh' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(124,7): error TS2339: Property 'planeGeometry' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(125,5): error TS2339: Property 'mesh' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/animated-hero-with-web-gl-glitter.tsx(164,9): error TS2339: Property 'color' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/animated-shader-background.tsx(2,24): error TS2307: Cannot find module 'three' or its corresponding type declarations.
+components/devComponents/background-paper-shaders.tsx(4,26): error TS2307: Cannot find module '@react-three/fiber' or its corresponding type declarations.
+components/devComponents/background-paper-shaders.tsx(5,24): error TS2307: Cannot find module 'three' or its corresponding type declarations.
+components/devComponents/background-paper-shaders.tsx(73,13): error TS7006: Parameter 'state' implicitly has an 'any' type.
+components/devComponents/background-paper-shaders.tsx(81,5): error TS2339: Property 'mesh' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(82,7): error TS2339: Property 'planeGeometry' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(83,7): error TS2339: Property 'shaderMaterial' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(90,5): error TS2339: Property 'mesh' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(103,13): error TS7006: Parameter 'state' implicitly has an 'any' type.
+components/devComponents/background-paper-shaders.tsx(111,5): error TS2339: Property 'mesh' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(112,7): error TS2339: Property 'ringGeometry' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(113,7): error TS2339: Property 'meshBasicMaterial' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/background-paper-shaders.tsx(114,5): error TS2339: Property 'mesh' does not exist on type 'JSX.IntrinsicElements'.
+components/devComponents/feature-section-with-hover-effects.tsx(12,8): error TS2307: Cannot find module '@tabler/icons-react' or its corresponding type declarations.
+components/devComponents/framer-carousel.tsx(3,49): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+components/devComponents/hero-section.tsx(10,26): error TS2307: Cannot find module 'next-themes' or its corresponding type declarations.
+components/devComponents/pricing-section.tsx(6,43): error TS2307: Cannot find module '@radix-ui/react-icons' or its corresponding type declarations.
+components/devComponents/testimonials-columns-1.tsx(3,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+components/devComponents/theme-provider.tsx(7,8): error TS2307: Cannot find module 'next-themes' or its corresponding type declarations.
+components/theme-provider.tsx(7,8): error TS2307: Cannot find module 'next-themes' or its corresponding type declarations.
+components/ui/accordion.tsx(4,37): error TS2307: Cannot find module '@radix-ui/react-accordion' or its corresponding type declarations.
+components/ui/agent-plan.tsx(11,54): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/agent-plan.tsx(12,31): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/agent-plan.tsx(457,35): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/ui/agent-plan.tsx(593,49): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/ui/alert-dialog.tsx(4,39): error TS2307: Cannot find module '@radix-ui/react-alert-dialog' or its corresponding type declarations.
+components/ui/avatar.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-avatar' or its corresponding type declarations.
+components/ui/background-beams.tsx(3,24): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/background-boxes.tsx(3,24): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/calendar.tsx(9,60): error TS2307: Cannot find module 'react-day-picker' or its corresponding type declarations.
+components/ui/calendar.tsx(39,31): error TS7006: Parameter 'date' implicitly has an 'any' type.
+components/ui/calendar.tsx(131,18): error TS7031: Binding element 'className' implicitly has an 'any' type.
+components/ui/calendar.tsx(131,29): error TS7031: Binding element 'rootRef' implicitly has an 'any' type.
+components/ui/calendar.tsx(141,21): error TS7031: Binding element 'className' implicitly has an 'any' type.
+components/ui/calendar.tsx(141,32): error TS7031: Binding element 'orientation' implicitly has an 'any' type.
+components/ui/calendar.tsx(162,24): error TS7031: Binding element 'children' implicitly has an 'any' type.
+components/ui/checkbox.tsx(4,36): error TS2307: Cannot find module '@radix-ui/react-checkbox' or its corresponding type declarations.
+components/ui/dark-gradient-pricing.tsx(1,24): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/database-with-rest-api.tsx(4,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+components/ui/dialog.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-dialog' or its corresponding type declarations.
+components/ui/dropdown-menu.tsx(4,40): error TS2307: Cannot find module '@radix-ui/react-dropdown-menu' or its corresponding type declarations.
+components/ui/form.tsx(4,33): error TS2307: Cannot find module '@radix-ui/react-label' or its corresponding type declarations.
+components/ui/form.tsx(14,8): error TS2307: Cannot find module 'react-hook-form' or its corresponding type declarations.
+components/ui/gradient-text.tsx(3,37): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+components/ui/hover-card.tsx(4,37): error TS2307: Cannot find module '@radix-ui/react-hover-card' or its corresponding type declarations.
+components/ui/label.tsx(4,33): error TS2307: Cannot find module '@radix-ui/react-label' or its corresponding type declarations.
+components/ui/magnetize-button.tsx(6,38): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/magnetize-button.tsx(56,39): error TS7006: Parameter 'i' implicitly has an 'any' type.
+components/ui/menubar.tsx(4,35): error TS2307: Cannot find module '@radix-ui/react-menubar' or its corresponding type declarations.
+components/ui/moving-border.tsx(9,8): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/moving-border.tsx(88,22): error TS7006: Parameter 'time' implicitly has an 'any' type.
+components/ui/moving-border.tsx(98,6): error TS7006: Parameter 'val' implicitly has an 'any' type.
+components/ui/moving-border.tsx(102,6): error TS7006: Parameter 'val' implicitly has an 'any' type.
+components/ui/navigation-menu.tsx(2,42): error TS2307: Cannot find module '@radix-ui/react-navigation-menu' or its corresponding type declarations.
+components/ui/placeholders-and-vanish-input.tsx(3,41): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/popover.tsx(4,35): error TS2307: Cannot find module '@radix-ui/react-popover' or its corresponding type declarations.
+components/ui/progress.tsx(4,36): error TS2307: Cannot find module '@radix-ui/react-progress' or its corresponding type declarations.
+components/ui/radio-group.tsx(4,38): error TS2307: Cannot find module '@radix-ui/react-radio-group' or its corresponding type declarations.
+components/ui/select.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-select' or its corresponding type declarations.
+components/ui/separator.tsx(4,37): error TS2307: Cannot find module '@radix-ui/react-separator' or its corresponding type declarations.
+components/ui/sheet.tsx(4,33): error TS2307: Cannot find module '@radix-ui/react-dialog' or its corresponding type declarations.
+components/ui/slider.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-slider' or its corresponding type declarations.
+components/ui/sonner.tsx(10,26): error TS2307: Cannot find module 'next-themes' or its corresponding type declarations.
+components/ui/sonner.tsx(11,54): error TS2307: Cannot find module 'sonner' or its corresponding type declarations.
+components/ui/switch.tsx(4,35): error TS2307: Cannot find module '@radix-ui/react-switch' or its corresponding type declarations.
+components/ui/tabs.tsx(4,32): error TS2307: Cannot find module '@radix-ui/react-tabs' or its corresponding type declarations.
+components/ui/text-shimmer.tsx(3,24): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.
+components/ui/toggle.tsx(4,34): error TS2307: Cannot find module '@radix-ui/react-toggle' or its corresponding type declarations.
+components/ui/typewriter.tsx(2,34): error TS2307: Cannot find module 'framer-motion' or its corresponding type declarations.

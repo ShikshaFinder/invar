@@ -30,7 +30,7 @@ function CreativePricing({
                     {tag}
                 </div>
                 <div className="relative">
-                    <h2 className="text-4xl md:text-5xl font-bold font-handwritten text-zinc-900 dark:text-white rotate-[-1deg]">
+                    <h2 className="text-4xl md:text-5xl font-bold font-handwritten text-zinc-900 rotate-[-1deg]">
                         {title}
                         <div className="absolute -right-12 top-0 text-amber-500 rotate-12">
                             ✨
@@ -44,7 +44,7 @@ function CreativePricing({
                         rotate-[-1deg] rounded-full blur-sm"
                     />
                 </div>
-                <p className="font-handwritten text-xl text-zinc-600 dark:text-zinc-400 rotate-[-1deg]">
+                <p className="font-handwritten text-xl text-zinc-600 rotate-[-1deg]">
                     {description}
                 </p>
             </div>
@@ -63,9 +63,9 @@ function CreativePricing({
                     >
                         <div
                             className={cn(
-                                "absolute inset-0 bg-white dark:bg-zinc-900",
-                                "border-2 border-zinc-900 dark:border-white",
-                                "rounded-lg shadow-[4px_4px_0px_0px] shadow-zinc-900 dark:shadow-white",
+                                "absolute inset-0 bg-white",
+                                "border-2 border-zinc-900",
+                                "rounded-lg shadow-[4px_4px_0px_0px] shadow-zinc-900",
                                 "transition-all duration-300",
                                 "group-hover:shadow-[8px_8px_0px_0px]",
                                 "group-hover:translate-x-[-4px]",
@@ -88,26 +88,26 @@ function CreativePricing({
                                     className={cn(
                                         "w-12 h-12 rounded-full mb-4",
                                         "flex items-center justify-center",
-                                        "border-2 border-zinc-900 dark:border-white",
+                                        "border-2 border-zinc-900",
                                         `text-${tier.color}-500`
                                     )}
                                 >
                                     {tier.icon}
                                 </div>
-                                <h3 className="font-handwritten text-2xl text-zinc-900 dark:text-white">
+                                <h3 className="font-handwritten text-2xl text-zinc-900">
                                     {tier.name}
                                 </h3>
-                                <p className="font-handwritten text-zinc-600 dark:text-zinc-400">
+                                <p className="font-handwritten text-zinc-600">
                                     {tier.description}
                                 </p>
                             </div>
 
                             {/* Price */}
                             <div className="mb-6 font-handwritten">
-                                <span className="text-4xl font-bold text-zinc-900 dark:text-white">
+                                <span className="text-4xl font-bold text-zinc-900">
                                     ${tier.price}
                                 </span>
-                                <span className="text-zinc-600 dark:text-zinc-400">
+                                <span className="text-zinc-600">
                                     /month
                                 </span>
                             </div>
@@ -119,12 +119,11 @@ function CreativePricing({
                                         className="flex items-center gap-3"
                                     >
                                         <div
-                                            className="w-5 h-5 rounded-full border-2 border-zinc-900 
-                                            dark:border-white flex items-center justify-center"
+                                            className="w-5 h-5 rounded-full border-2 border-zinc-900 flex items-center justify-center"
                                         >
                                             <Check className="w-3 h-3" />
                                         </div>
-                                        <span className="font-handwritten text-lg text-zinc-900 dark:text-white">
+                                        <span className="font-handwritten text-lg text-zinc-900">
                                             {feature}
                                         </span>
                                     </div>
@@ -134,9 +133,9 @@ function CreativePricing({
                             <Button
                                 className={cn(
                                     "w-full h-12 font-handwritten text-lg relative",
-                                    "border-2 border-zinc-900 dark:border-white",
+                                    "border-2 border-zinc-900",
                                     "transition-all duration-300",
-                                    "shadow-[4px_4px_0px_0px] shadow-zinc-900 dark:shadow-white",
+                                    "shadow-[4px_4px_0px_0px] shadow-zinc-900",
                                     "hover:shadow-[6px_6px_0px_0px]",
                                     "hover:translate-x-[-2px] hover:translate-y-[-2px]",
                                     tier.popular
@@ -144,14 +143,14 @@ function CreativePricing({
                                               "bg-amber-400 text-zinc-900",
                                               "hover:bg-amber-300",
                                               "active:bg-amber-400",
-                                              "dark:hover:bg-amber-300",
-                                              "dark:active:bg-amber-400",
+                                              "",
+                                              "",
                                           ]
                                         : [
-                                              "bg-zinc-50 dark:bg-zinc-800",
-                                              "text-zinc-900 dark:text-white",
-                                              "hover:bg-white dark:hover:bg-zinc-700",
-                                              "active:bg-zinc-50 dark:active:bg-zinc-800",
+                                              "bg-zinc-50",
+                                              "text-zinc-900",
+                                              "hover:bg-white",
+                                              "active:bg-zinc-50",
                                           ]
                                 )}
                             >
