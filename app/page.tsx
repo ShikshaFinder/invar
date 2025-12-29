@@ -157,24 +157,24 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection
         badge={{
-          text: "🚀 New Launch",
+          text: "🏥 Trusted Nutraceuticals",
           action: {
             text: "Explore Products",
             href: "#products"
           }
         }}
-        title="Antigravity Nutrition"
-        subtitle="Science-backed supplements for real performance"
-        description="Premium quality nutraceutical solutions crafted with precision and backed by science for your health and wellness journey."
+        title="Invar Pharmaceutical"
+        subtitle="Your Partner in Health & Wellness"
+        description="Manufacturing premium nutraceutical & wellness products: protein powders, cardiac formulations, diabesity-oriented solutions, and throat sprays."
         actions={[
           {
-            text: "Shop Now",
+            text: "Explore Products",
             href: "#products",
             variant: "glow"
           },
           {
-            text: "Learn More",
-            href: "#about",
+            text: "Contact Us",
+            href: "#contact",
             variant: "outline"
           }
         ]}
@@ -184,7 +184,7 @@ export default function Home() {
       <section id="products" className="py-24 bg-white relative overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-teal-50/30 pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
@@ -200,13 +200,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.filter(p => p.family !== "CATALOG").map((product, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative bg-white backdrop-blur-sm rounded-3xl p-6 border border-neutral-200/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
-                
+
                 {product.image && (
                   <div className="relative w-full h-48 mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50">
                     <Image
@@ -235,7 +235,7 @@ export default function Home() {
                     {product.description}
                   </p>
                 </div>
-                
+
                 {/* Bottom animated border */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
@@ -247,7 +247,7 @@ export default function Home() {
       {/* Product Details & Downloads Section - Modern Cards */}
       <section className="py-24 bg-neutral-50 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-100/20 via-transparent to-transparent pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 text-blue-700 ring-1 ring-inset ring-blue-600/20">
@@ -260,16 +260,16 @@ export default function Home() {
               Download detailed information for each of our specialized product families.
             </p>
           </div>
-          
+
           <div className="space-y-4">
             {products.filter(p => p.family !== "CATALOG").map((product, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative flex flex-col lg:flex-row items-start lg:items-center justify-between bg-white p-6 lg:p-8 rounded-2xl border border-neutral-200 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5"
               >
                 {/* Left accent line */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-500 to-teal-500 rounded-l-2xl transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                
+
                 <div className="flex-1 pl-4 mb-4 lg:mb-0">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xs font-bold text-emerald-600 uppercase tracking-wide px-2.5 py-1 bg-emerald-50 rounded-md">
@@ -315,7 +315,7 @@ export default function Home() {
       {/* Nutritional Information Section - Feature Cards with Hover */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/50 to-transparent pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
@@ -357,7 +357,7 @@ export default function Home() {
       {/* Medical Benefits Section - Modern Grid with Images */}
       <section className="py-24 bg-neutral-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 text-blue-700 ring-1 ring-inset ring-blue-600/20">
@@ -373,9 +373,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ingredients.map((ingredient, index) => (
-              <a 
-                href={`/benefits/${index}`} 
-                key={index} 
+              <a
+                href={`/benefits/${index}`}
+                key={index}
                 className="group relative bg-white rounded-3xl overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
               >
                 {/* Image Section */}
@@ -397,7 +397,7 @@ export default function Home() {
                     </svg>
                   </div>
                 )}
-                
+
                 {/* Content Section */}
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-neutral-900 mb-3 group-hover:text-blue-600 transition-colors">
@@ -410,7 +410,7 @@ export default function Home() {
                     </svg>
                   </div>
                 </div>
-                
+
                 {/* Animated bottom border */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </a>
@@ -422,7 +422,7 @@ export default function Home() {
       {/* Use Cases Section - Modern Feature Cards */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-transparent to-pink-50/30 pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-purple-100 text-purple-700 ring-1 ring-inset ring-purple-600/20">
@@ -438,13 +438,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {useCases.map((useCase, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative bg-gradient-to-br from-white to-neutral-50 p-8 rounded-3xl border border-neutral-200 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 overflow-hidden"
               >
                 {/* Background pattern */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
-                
+
                 <div className="flex items-start gap-6 relative z-10">
                   <div className="flex-shrink-0">
                     <div className="relative">
@@ -465,7 +465,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Animated corner accent */}
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-purple-500/10 to-transparent transform translate-x-12 translate-y-12 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 rounded-tl-3xl" />
               </div>
@@ -484,7 +484,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-neutral-950" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             {/* Brand Column */}
@@ -509,7 +509,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            
+
             {/* Quick Links */}
             <div>
               <h4 className="font-semibold text-white mb-6 flex items-center gap-2">
@@ -532,7 +532,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            
+
             {/* Contact Info */}
             <div>
               <h4 className="font-semibold text-white mb-6 flex items-center gap-2">
@@ -566,7 +566,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Bottom Bar */}
           <div className="border-t border-neutral-800 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
