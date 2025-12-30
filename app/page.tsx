@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 import { products, ingredients, useCases } from "./data";
 import ContactSection from "./components/ContactSection";
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
 
 // Feature Card Component with hover effects
 const FeatureCard = ({
@@ -200,8 +202,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.filter(p => p.family !== "CATALOG").map((product, index) => (
-              <div 
-                key={index} 
+              <Link 
+                key={index}
+                href={`/products/${index}`}
                 className="group relative bg-white dark:bg-neutral-800/50 backdrop-blur-sm rounded-3xl p-6 border border-neutral-200/50 dark:border-neutral-700/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
               >
                 {/* Gradient overlay on hover */}
@@ -234,11 +237,17 @@ export default function Home() {
                   <p className="text-neutral-600 dark:text-neutral-400 text-sm line-clamp-3">
                     {product.description}
                   </p>
+                  <span className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold text-sm mt-4 group-hover:translate-x-1 transition-transform">
+                    View Details
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
                 </div>
                 
                 {/* Bottom animated border */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -251,13 +260,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-600/20">
-              Downloads
+              Details
             </span>
             <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl">
               Product Details
             </h2>
             <p className="max-w-[550px] text-lg text-neutral-600 dark:text-neutral-400">
-              Download detailed information for each of our specialized product families.
+              View detailed information for each of our specialized product families.
             </p>
           </div>
           
@@ -295,17 +304,16 @@ export default function Home() {
                     </ul>
                   )}
                 </div>
-                <a
-                  href={product.file}
-                  download
+                <Link
+                  href={`/products/${index}`}
                   className="group/btn flex-shrink-0 relative overflow-hidden bg-gradient-to-r from-neutral-900 to-neutral-800 dark:from-white dark:to-neutral-200 text-white dark:text-neutral-900 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                   <svg className="w-5 h-5 relative z-10 group-hover/btn:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="relative z-10 group-hover/btn:text-white transition-colors">Download</span>
-                </a>
+                  <span className="relative z-10 group-hover/btn:text-white transition-colors">View Details</span>
+                </Link>
               </div>
             ))}
           </div>
@@ -474,7 +482,8 @@ export default function Home() {
         </div>
       </section>
 
-
+      {/* About Us Section */}
+      <AboutSection />
 
       <ContactSection />
 

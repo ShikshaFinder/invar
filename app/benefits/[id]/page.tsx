@@ -2,6 +2,7 @@
 import { ingredients } from "../../data";
 import Link from 'next/link';
 import HeroSection from "../../components/HeroSection";
+import DocViewer from "../../components/DocViewer";
 
 export async function generateStaticParams() {
     return ingredients.map((_, index) => ({
@@ -60,6 +61,16 @@ export default async function BenefitPage({ params }: { params: Promise<{ id: st
                                 ))}
                             </ul>
                         </div>
+
+                        {/* View Detailed Document Button */}
+                        {ingredient.sourceDoc && ingredient.sourceDoc.endsWith('.docx') && (
+                            <div className="mt-8 pt-8 border-t border-neutral-200">
+                                <DocViewer filePath={ingredient.sourceDoc} buttonText="View Detailed Information" />
+                                <p className="mt-2 text-sm text-neutral-500">
+                                    Click to view the complete document with detailed research and benefits
+                                </p>
+                            </div>
+                        )}
 
 
                     </div>
