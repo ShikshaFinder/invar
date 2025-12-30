@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import mammoth from "mammoth";
+import "./doc-viewer.css";
 
 interface DocViewerProps {
     filePath: string;
@@ -103,130 +104,6 @@ export default function DocViewer({ filePath, buttonText = "View Detailed Inform
 
                         {/* Modal Body - Scrollable Content */}
                         <div className="flex-1 overflow-y-auto p-6">
-                            <style jsx global>{`
-                                .doc-content h1 {
-                                    font-size: 1.75rem;
-                                    font-weight: 700;
-                                    color: #111827;
-                                    margin-bottom: 1rem;
-                                    margin-top: 1.5rem;
-                                    border-bottom: 2px solid #10b981;
-                                    padding-bottom: 0.5rem;
-                                }
-                                .doc-content h2 {
-                                    font-size: 1.5rem;
-                                    font-weight: 600;
-                                    color: #1f2937;
-                                    margin-bottom: 0.75rem;
-                                    margin-top: 1.25rem;
-                                }
-                                .doc-content h3 {
-                                    font-size: 1.25rem;
-                                    font-weight: 600;
-                                    color: #374151;
-                                    margin-bottom: 0.5rem;
-                                    margin-top: 1rem;
-                                }
-                                .doc-content p {
-                                    margin-bottom: 0.75rem;
-                                    line-height: 1.7;
-                                    color: #4b5563;
-                                }
-                                .doc-content strong, .doc-content b {
-                                    font-weight: 700;
-                                    color: #111827;
-                                }
-                                .doc-content em, .doc-content i {
-                                    font-style: italic;
-                                    color: #6b7280;
-                                }
-                                .doc-content ul, .doc-content ol {
-                                    margin-left: 1.5rem;
-                                    margin-bottom: 1rem;
-                                }
-                                .doc-content li {
-                                    margin-bottom: 0.5rem;
-                                    line-height: 1.6;
-                                    color: #4b5563;
-                                }
-                                .doc-content ul li {
-                                    list-style-type: disc;
-                                }
-                                .doc-content ol li {
-                                    list-style-type: decimal;
-                                }
-                                .doc-content table {
-                                    width: 100%;
-                                    border-collapse: collapse;
-                                    margin: 1rem 0;
-                                    font-size: 0.875rem;
-                                    border-radius: 0.5rem;
-                                    overflow: hidden;
-                                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-                                }
-                                .doc-content table th {
-                                    background: linear-gradient(to right, #10b981, #14b8a6);
-                                    color: white;
-                                    font-weight: 600;
-                                    text-align: left;
-                                    padding: 0.75rem 1rem;
-                                    border: 1px solid #059669;
-                                }
-                                .doc-content table td {
-                                    padding: 0.75rem 1rem;
-                                    border: 1px solid #e5e7eb;
-                                    color: #374151;
-                                }
-                                .doc-content table tr:nth-child(even) {
-                                    background-color: #f9fafb;
-                                }
-                                .doc-content table tr:hover {
-                                    background-color: #ecfdf5;
-                                }
-                                .doc-content a {
-                                    color: #2563eb;
-                                    text-decoration: underline;
-                                }
-                                .doc-content a:hover {
-                                    color: #1d4ed8;
-                                }
-                                .dark .doc-content h1 {
-                                    color: #f9fafb;
-                                    border-bottom-color: #10b981;
-                                }
-                                .dark .doc-content h2 {
-                                    color: #e5e7eb;
-                                }
-                                .dark .doc-content h3 {
-                                    color: #d1d5db;
-                                }
-                                .dark .doc-content p {
-                                    color: #9ca3af;
-                                }
-                                .dark .doc-content strong, .dark .doc-content b {
-                                    color: #f3f4f6;
-                                }
-                                .dark .doc-content em, .dark .doc-content i {
-                                    color: #9ca3af;
-                                }
-                                .dark .doc-content li {
-                                    color: #9ca3af;
-                                }
-                                .dark .doc-content table th {
-                                    background: linear-gradient(to right, #059669, #0d9488);
-                                    border-color: #047857;
-                                }
-                                .dark .doc-content table td {
-                                    border-color: #374151;
-                                    color: #d1d5db;
-                                }
-                                .dark .doc-content table tr:nth-child(even) {
-                                    background-color: #1f2937;
-                                }
-                                .dark .doc-content table tr:hover {
-                                    background-color: #064e3b;
-                                }
-                            `}</style>
                             <div 
                                 className="doc-content"
                                 dangerouslySetInnerHTML={{ __html: content }}
