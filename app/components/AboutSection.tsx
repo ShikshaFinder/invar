@@ -18,23 +18,23 @@ const AboutFeatureCard = ({
     return (
         <div
             className={cn(
-                "flex flex-col lg:border-r py-8 relative group/feature dark:border-neutral-800 border-neutral-200",
-                index === 0 && "lg:border-l dark:border-neutral-800 border-neutral-200",
-                "lg:border-b dark:border-neutral-800 border-neutral-200"
+                "flex flex-col lg:border-r py-8 relative group/feature border-neutral-200",
+                index === 0 && "lg:border-l border-neutral-200",
+                "lg:border-b border-neutral-200"
             )}
         >
-            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-emerald-100/50 dark:from-emerald-900/20 to-transparent pointer-events-none" />
-            
-            <div className="mb-4 relative z-10 px-8 text-emerald-600 dark:text-emerald-400">
+            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-emerald-100/50 to-transparent pointer-events-none" />
+
+            <div className="mb-4 relative z-10 px-8 text-emerald-600">
                 {icon}
             </div>
             <div className="text-lg font-bold mb-2 relative z-10 px-8">
-                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-emerald-500 transition-all duration-200 origin-center" />
-                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 group-hover/feature:bg-emerald-500 transition-all duration-200 origin-center" />
+                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800">
                     {title}
                 </span>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10 px-8">
+            <p className="text-sm text-neutral-600 relative z-10 px-8">
                 {description}
             </p>
         </div>
@@ -44,7 +44,7 @@ const AboutFeatureCard = ({
 export default function AboutSection() {
     const companyInfo = {
         name: "INVAR PHARMACEUTICAL PRIVATE LIMITED",
-        tagline: "Antigravity Nutrition - Science-backed supplements for real performance",
+        tagline: "Your Partner in Health & Wellness - Science-backed nutraceutical solutions",
         description: "Invar Pharmaceutical Private Limited is a premier manufacturer of nutraceutical and wellness products. We specialize in creating high-quality protein powders, cardiac health formulations, diabesity-oriented solutions, and herbal throat relief sprays. Our commitment to excellence drives us to deliver products that meet the highest standards of quality and efficacy.",
         address: "A-10 Hastinapuri Society, Kishan Samosa no Khacho, College Road, Nadiad",
         gstin: "24AAHCI7314K1ZH",
@@ -139,13 +139,13 @@ export default function AboutSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <div className="flex flex-col items-center gap-4 text-center mb-16">
-                    <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 ring-1 ring-inset ring-emerald-600/20">
+                    <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
                         About Us
                     </span>
-                    <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl">
+                    <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl">
                         {companyInfo.name}
                     </h2>
-                    <p className="max-w-3xl text-lg text-neutral-600 dark:text-neutral-400">
+                    <p className="max-w-3xl text-lg text-neutral-600">
                         {companyInfo.tagline}
                     </p>
                 </div>
@@ -153,24 +153,24 @@ export default function AboutSection() {
                 {/* Main Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                     {/* Company Description Card */}
-                    <div className="bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 p-8 md:p-10 rounded-3xl border border-neutral-200 dark:border-neutral-700 shadow-xl shadow-emerald-500/5">
+                    <div className="bg-gradient-to-br from-white to-neutral-50 p-8 md:p-10 rounded-3xl border border-neutral-200 shadow-xl shadow-emerald-500/5">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="p-3 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 rounded-2xl">
-                                <svg className="w-8 h-8 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="p-3 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl">
+                                <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-neutral-900 dark:text-white">Our Company</h3>
-                                <p className="text-sm text-emerald-600 dark:text-emerald-400">Nutraceutical Excellence</p>
+                                <h3 className="text-xl font-bold text-neutral-900">Our Company</h3>
+                                <p className="text-sm text-emerald-600">Nutraceutical Excellence</p>
                             </div>
                         </div>
-                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
+                        <p className="text-neutral-600 leading-relaxed mb-8">
                             {companyInfo.description}
                         </p>
-                        
+
                         {/* Company Details */}
-                        <div className="space-y-4 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+                        <div className="space-y-4 pt-6 border-t border-neutral-200">
                             <div className="flex items-start gap-3">
                                 <svg className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -178,7 +178,7 @@ export default function AboutSection() {
                                 </svg>
                                 <div>
                                     <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider">Address</p>
-                                    <p className="text-neutral-900 dark:text-white">{companyInfo.address}</p>
+                                    <p className="text-neutral-900">{companyInfo.address}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
@@ -187,7 +187,7 @@ export default function AboutSection() {
                                 </svg>
                                 <div>
                                     <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider">Email</p>
-                                    <a href={`mailto:${companyInfo.email}`} className="text-neutral-900 dark:text-white hover:text-emerald-600 transition-colors">{companyInfo.email}</a>
+                                    <a href={`mailto:${companyInfo.email}`} className="text-neutral-900 hover:text-emerald-600 transition-colors">{companyInfo.email}</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
@@ -196,17 +196,17 @@ export default function AboutSection() {
                                 </svg>
                                 <div>
                                     <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider">Phone</p>
-                                    <a href={`tel:${companyInfo.phone}`} className="text-neutral-900 dark:text-white hover:text-emerald-600 transition-colors">{companyInfo.phone}</a>
+                                    <a href={`tel:${companyInfo.phone}`} className="text-neutral-900 hover:text-emerald-600 transition-colors">{companyInfo.phone}</a>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-6 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                            <div className="flex items-center gap-6 pt-4 border-t border-neutral-200">
                                 <div>
                                     <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider">GSTIN</p>
-                                    <p className="text-neutral-900 dark:text-white font-mono text-sm">{companyInfo.gstin}</p>
+                                    <p className="text-neutral-900 font-mono text-sm">{companyInfo.gstin}</p>
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider">State</p>
-                                    <p className="text-neutral-900 dark:text-white">{companyInfo.state}</p>
+                                    <p className="text-neutral-900">{companyInfo.state}</p>
                                 </div>
                             </div>
                         </div>
@@ -217,14 +217,14 @@ export default function AboutSection() {
                         {/* Milestones */}
                         <div className="grid grid-cols-2 gap-4">
                             {milestones.map((milestone, index) => (
-                                <div 
+                                <div
                                     key={index}
-                                    className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 p-6 rounded-2xl border border-emerald-200/50 dark:border-emerald-800/50 text-center group hover:scale-105 transition-transform duration-300"
+                                    className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-200/50 text-center group hover:scale-105 transition-transform duration-300"
                                 >
                                     <div className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-1">
                                         {milestone.value}
                                     </div>
-                                    <p className="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+                                    <p className="text-sm text-neutral-600 font-medium">
                                         {milestone.label}
                                     </p>
                                 </div>
@@ -232,7 +232,7 @@ export default function AboutSection() {
                         </div>
 
                         {/* Core Values Feature Cards */}
-                        <div className="bg-white dark:bg-neutral-800/50 rounded-3xl border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+                        <div className="bg-white rounded-3xl border border-neutral-200 overflow-hidden">
                             <div className="grid grid-cols-1">
                                 {features.map((feature, index) => (
                                     <AboutFeatureCard
@@ -248,26 +248,26 @@ export default function AboutSection() {
                     </div>
                 </div>
 
-                {/* Product Categories */}
+                {/* ProductCategories */}
                 <div className="mb-8">
-                    <h3 className="text-2xl font-bold text-center text-neutral-900 dark:text-white mb-8">
+                    <h3 className="text-2xl font-bold text-center text-neutral-900 mb-8">
                         What We Manufacture
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {productCategories.map((category, index) => (
-                            <div 
+                            <div
                                 key={index}
-                                className="group relative bg-white dark:bg-neutral-800/50 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 hover:-translate-y-1"
+                                className="group relative bg-white p-6 rounded-2xl border border-neutral-200 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 hover:-translate-y-1"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                                 <div className="relative z-10">
-                                    <div className="p-3 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 rounded-xl w-fit mb-4 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-300">
+                                    <div className="p-3 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl w-fit mb-4 text-emerald-600 group-hover:scale-110 transition-transform duration-300">
                                         {category.icon}
                                     </div>
-                                    <h4 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    <h4 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-emerald-600 transition-colors">
                                         {category.title}
                                     </h4>
-                                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                                    <p className="text-sm text-neutral-600">
                                         {category.description}
                                     </p>
                                 </div>

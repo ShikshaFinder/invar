@@ -4,6 +4,38 @@ import Image from 'next/image';
 import HeroSection from "../../components/HeroSection";
 import DocViewer from "../../components/DocViewer";
 
+// Navigation Component
+function Navbar() {
+    return (
+        <nav className="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-neutral-200/50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-16">
+                    <div className="flex-shrink-0 flex items-center gap-3">
+                        <Link href="/">
+                            <Image
+                                src="/Black Invar Logo Png.png"
+                                alt="Invar Logo"
+                                width={120}
+                                height={40}
+                                className="h-10 w-auto object-contain"
+                            />
+                        </Link>
+                    </div>
+                    <div className="hidden md:block">
+                        <div className="ml-10 flex items-baseline space-x-2">
+                            <Link href="/#products" className="relative hover:text-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-emerald-50">Products</Link>
+                            <Link href="/#about" className="relative hover:text-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-emerald-50">About</Link>
+                            <Link href="/#contact" className="relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 text-white hover:from-emerald-700 hover:to-emerald-600 px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 hover:scale-105">
+                                Contact Us
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
+}
+
 export async function generateStaticParams() {
     return products.filter(p => p.family !== "CATALOG").map((_, index) => ({
         id: index.toString(),
@@ -14,20 +46,20 @@ export async function generateStaticParams() {
 function findRelatedIngredient(productTitle: string) {
     const productLower = productTitle.toLowerCase();
     if (productLower.includes('cardiac') || productLower.includes('sallypro c')) {
-        return ingredients.filter(i => 
-            i.name.toLowerCase().includes('arjuna') || 
+        return ingredients.filter(i =>
+            i.name.toLowerCase().includes('arjuna') ||
             i.name.toLowerCase().includes('beetroot')
         );
     }
     if (productLower.includes('diabesity') || productLower.includes('sallypro d')) {
-        return ingredients.filter(i => 
-            i.name.toLowerCase().includes('garcinia') || 
+        return ingredients.filter(i =>
+            i.name.toLowerCase().includes('garcinia') ||
             i.name.toLowerCase().includes('omega')
         );
     }
     if (productLower.includes('protein') || productLower.includes('sallypro protein')) {
-        return ingredients.filter(i => 
-            i.name.toLowerCase().includes('vitamin') || 
+        return ingredients.filter(i =>
+            i.name.toLowerCase().includes('vitamin') ||
             i.name.toLowerCase().includes('mineral')
         );
     }
@@ -62,9 +94,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
     if (!product) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-neutral-50 dark:bg-neutral-950">
+            <div className="min-h-screen flex items-center justify-center bg-neutral-50">
                 <div className="text-center">
-                    <h1 className="text-2xl font-bold mb-4 text-neutral-900 dark:text-white">Product Not Found</h1>
+                    <h1 className="text-2xl font-bold mb-4 text-neutral-900">Product Not Found</h1>
                     <Link href="/" className="text-emerald-600 hover:underline">
                         Return Home
                     </Link>
@@ -77,7 +109,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const relatedUseCase = findRelatedUseCase(product.title);
 
     return (
-        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans">
+        <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
+            {/* Navigation */}
+            <Navbar />
+
             {/* Hero Section */}
             <HeroSection
                 badge={{
@@ -113,10 +148,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <div id="product-details" className="grid grid-cols-1 lg:grid-cols-3 gap-8 scroll-mt-24">
                     {/* Product Image & Quick Info */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 border border-neutral-200 dark:border-neutral-800 shadow-xl shadow-emerald-500/5 sticky top-24">
+                        <div className="bg-white rounded-3xl p-6 border border-neutral-200 shadow-xl shadow-emerald-500/5 sticky top-24">
                             {/* Product Image */}
                             {product.image && (
-                                <div className="relative w-full h-64 mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-900">
+                                <div className="relative w-full h-64 mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50">
                                     <Image
                                         src={product.image}
                                         alt={product.title}
@@ -125,19 +160,19 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                     />
                                 </div>
                             )}
-                            
+
                             {/* Product Badge */}
-                            <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-50 dark:bg-emerald-900/30 mb-4">
+                            <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wider text-emerald-600 uppercase bg-emerald-50 mb-4">
                                 {product.family}
                             </span>
-                            
+
                             {/* Features */}
                             {product.features && (
                                 <div className="space-y-3">
                                     <h4 className="text-sm font-bold text-neutral-500 uppercase tracking-wider">Key Features</h4>
                                     <ul className="space-y-2">
                                         {product.features.map((feature, i) => (
-                                            <li key={i} className="flex items-start text-sm text-neutral-600 dark:text-neutral-400">
+                                            <li key={i} className="flex items-start text-sm text-neutral-600">
                                                 <svg className="w-4 h-4 mr-2 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                                 </svg>
@@ -147,7 +182,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                     </ul>
                                 </div>
                             )}
-                            
+
                             {/* View All Details Button */}
                             <a
                                 href="#product-details"
@@ -172,17 +207,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     <div className="lg:col-span-2 space-y-8">
                         {/* Nutritional Information */}
                         {product.nutrition && (
-                            <div className="bg-white dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-emerald-500/5">
-                                <div className="p-6 border-b border-neutral-200 dark:border-neutral-800 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30">
+                            <div className="bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-emerald-500/5">
+                                <div className="p-6 border-b border-neutral-200 bg-gradient-to-r from-emerald-50 to-teal-50">
                                     <div className="flex items-center gap-3">
-                                        <div className="p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-xl">
-                                            <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="p-2 bg-emerald-100 rounded-xl">
+                                            <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Nutritional Information</h2>
-                                            <p className="text-sm text-neutral-600 dark:text-neutral-400">Complete nutritional breakdown</p>
+                                            <h2 className="text-xl font-bold text-neutral-900">Nutritional Information</h2>
+                                            <p className="text-sm text-neutral-600">Complete nutritional breakdown</p>
                                         </div>
                                     </div>
                                 </div>
@@ -190,14 +225,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                     {product.nutrition.sections.map((section, sIndex) => (
                                         <div key={sIndex} className="mb-8 last:mb-0">
                                             {product.nutrition?.sections && product.nutrition.sections.length > 1 && (
-                                                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                                                <h3 className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                                                     <div className="w-1 h-5 bg-gradient-to-b from-emerald-500 to-teal-500 rounded-full" />
                                                     {section.title}
                                                 </h3>
                                             )}
-                                            <div className="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-700">
-                                                <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
-                                                    <thead className="bg-neutral-50 dark:bg-neutral-800">
+                                            <div className="overflow-x-auto rounded-xl border border-neutral-200">
+                                                <table className="min-w-full divide-y divide-neutral-200">
+                                                    <thead className="bg-neutral-50">
                                                         <tr>
                                                             {product.nutrition?.headers.map((header, hIndex) => (
                                                                 <th key={hIndex} scope="col" className="px-4 py-3 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">
@@ -206,11 +241,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                                             ))}
                                                         </tr>
                                                     </thead>
-                                                    <tbody className="bg-white dark:bg-neutral-900 divide-y divide-neutral-100 dark:divide-neutral-800">
+                                                    <tbody className="bg-white divide-y divide-neutral-100">
                                                         {section.items.map((row, rIndex) => (
-                                                            <tr key={rIndex} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                                                            <tr key={rIndex} className="hover:bg-neutral-50 transition-colors">
                                                                 {row.map((cell, cIndex) => (
-                                                                    <td key={cIndex} className={`px-4 py-3 whitespace-nowrap text-sm ${cIndex === 0 ? 'font-medium text-neutral-900 dark:text-white' : 'text-neutral-600 dark:text-neutral-400'}`}>
+                                                                    <td key={cIndex} className={`px-4 py-3 whitespace-nowrap text-sm ${cIndex === 0 ? 'font-medium text-neutral-900' : 'text-neutral-600'}`}>
                                                                         {cell}
                                                                     </td>
                                                                 ))}
@@ -227,25 +262,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         {/* Medical Benefits / Key Ingredients */}
                         {relatedIngredients.length > 0 && (
-                            <div className="bg-white dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-blue-500/5">
-                                <div className="p-6 border-b border-neutral-200 dark:border-neutral-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30">
+                            <div className="bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-blue-500/5">
+                                <div className="p-6 border-b border-neutral-200 bg-gradient-to-r from-blue-50 to-indigo-50">
                                     <div className="flex items-center gap-3">
-                                        <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
-                                            <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="p-2 bg-blue-100 rounded-xl">
+                                            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Medical Benefits</h2>
-                                            <p className="text-sm text-neutral-600 dark:text-neutral-400">Key ingredient health benefits</p>
+                                            <h2 className="text-xl font-bold text-neutral-900">Medical Benefits</h2>
+                                            <p className="text-sm text-neutral-600">Key ingredient health benefits</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-6 space-y-6">
                                     {relatedIngredients.map((ingredient, iIndex) => (
-                                        <div key={iIndex} className="flex flex-col md:flex-row gap-6 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-800/50">
+                                        <div key={iIndex} className="flex flex-col md:flex-row gap-6 p-4 rounded-2xl bg-neutral-50">
                                             {ingredient.image && (
-                                                <div className="relative w-full md:w-32 h-32 flex-shrink-0 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
+                                                <div className="relative w-full md:w-32 h-32 flex-shrink-0 overflow-hidden rounded-xl bg-white">
                                                     <Image
                                                         src={ingredient.image}
                                                         alt={ingredient.name}
@@ -255,17 +290,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                                 </div>
                                             )}
                                             <div className="flex-1">
-                                                <h4 className="text-lg font-bold text-neutral-900 dark:text-white mb-3">{ingredient.name}</h4>
+                                                <h4 className="text-lg font-bold text-neutral-900 mb-3">{ingredient.name}</h4>
                                                 <div className="flex flex-wrap gap-2">
                                                     {ingredient.highlights.slice(0, 8).map((highlight, hIndex) => (
-                                                        <span key={hIndex} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                                                        <span key={hIndex} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
                                                             {highlight}
                                                         </span>
                                                     ))}
                                                     {ingredient.highlights.length > 8 && (
-                                                        <Link 
+                                                        <Link
                                                             href={`/benefits/${ingredients.indexOf(ingredient)}`}
-                                                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                                                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-neutral-200 text-neutral-700 hover:bg-blue-100 transition-colors"
                                                         >
                                                             +{ingredient.highlights.length - 8} more →
                                                         </Link>
@@ -280,29 +315,29 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         {/* Use Case Summary */}
                         {relatedUseCase && (
-                            <div className="bg-white dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-purple-500/5">
-                                <div className="p-6 border-b border-neutral-200 dark:border-neutral-800 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
+                            <div className="bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-purple-500/5">
+                                <div className="p-6 border-b border-neutral-200 bg-gradient-to-r from-purple-50 to-pink-50">
                                     <div className="flex items-center gap-3">
-                                        <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-xl">
-                                            <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="p-2 bg-purple-100 rounded-xl">
+                                            <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Use Case Summary</h2>
-                                            <p className="text-sm text-neutral-600 dark:text-neutral-400">Applications and recommendations</p>
+                                            <h2 className="text-xl font-bold text-neutral-900">Use Case Summary</h2>
+                                            <p className="text-sm text-neutral-600">Applications and recommendations</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-6">
-                                    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-100 dark:border-purple-900/30">
-                                        <h4 className="text-lg font-bold text-neutral-900 dark:text-white mb-3 flex items-center gap-2">
+                                    <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100">
+                                        <h4 className="text-lg font-bold text-neutral-900 mb-3 flex items-center gap-2">
                                             <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                             </svg>
                                             {relatedUseCase.title}
                                         </h4>
-                                        <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                                        <p className="text-neutral-700 leading-relaxed">
                                             {relatedUseCase.description}
                                         </p>
                                     </div>
@@ -339,18 +374,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                 {/* Related Products */}
                 <div className="mt-16">
-                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-8">Other Products</h3>
+                    <h3 className="text-2xl font-bold text-neutral-900 mb-8">Other Products</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {products.filter(p => p.family !== "CATALOG" && p.title !== product.title).slice(0, 3).map((relatedProduct, rpIndex) => {
                             const originalIndex = products.filter(p => p.family !== "CATALOG").findIndex(p => p.title === relatedProduct.title);
                             return (
-                                <Link 
+                                <Link
                                     key={rpIndex}
                                     href={`/products/${originalIndex}`}
-                                    className="group bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-neutral-200 dark:border-neutral-800 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
+                                    className="group bg-white rounded-2xl p-6 border border-neutral-200 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
                                 >
                                     {relatedProduct.image && (
-                                        <div className="relative w-full h-40 mb-4 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                                        <div className="relative w-full h-40 mb-4 overflow-hidden rounded-xl bg-neutral-100">
                                             <Image
                                                 src={relatedProduct.image}
                                                 alt={relatedProduct.title}
@@ -359,13 +394,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                             />
                                         </div>
                                     )}
-                                    <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-50 dark:bg-emerald-900/30 mb-2">
+                                    <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-bold tracking-wider text-emerald-600 uppercase bg-emerald-50 mb-2">
                                         {relatedProduct.family}
                                     </span>
-                                    <h4 className="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
+                                    <h4 className="text-lg font-bold text-neutral-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
                                         {relatedProduct.title}
                                     </h4>
-                                    <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 line-clamp-2">
+                                    <p className="text-sm text-neutral-600 mt-2 line-clamp-2">
                                         {relatedProduct.description}
                                     </p>
                                 </Link>
