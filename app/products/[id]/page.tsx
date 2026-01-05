@@ -76,7 +76,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const relatedUseCase = findRelatedUseCase(product.title);
 
     // WhatsApp enquiry URL - replace with your actual phone number
-    const whatsappNumber = "919876543210"; // Replace with actual WhatsApp number
+    const whatsappNumber = "917096273336"; // Replace with actual WhatsApp number
     const whatsappMessage = encodeURIComponent(`Hi, I'm interested in ${product.title}. Please provide more information.`);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
