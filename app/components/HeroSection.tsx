@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -88,7 +88,7 @@ export default function HeroSection({
                 return (
                   <Button
                     key={index}
-                    variant={isGlow ? "default" : action.variant}
+                    variant={isGlow ? "default" : (action.variant as "default" | "outline" | "ghost" | undefined)}
                     size="lg"
                     className={cn(
                       isGlow &&
