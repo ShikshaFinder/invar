@@ -3,6 +3,7 @@ export interface Product {
     title: string;
     subtitle: string;
     description: string;
+    additional_description?: string; // Optional field for extra info box
     features?: string[];
     nutrition?: {
         headers: string[];
@@ -96,11 +97,11 @@ export interface UseCase {
 export const useCases: UseCase[] = [
     {
         title: "SORE THROAT SPRAY",
-        description: "Symptomatic relief from throat pain, cough irritation, microbe-related soreness. Herbal action from ginger, honey, tulsi, curcumin, piperine."
+        description: `<p><strong>Symptomatic relief from throat pain and cough:</strong></p>\n<ul>\n<li>Provides fast relief from throat pain, cough irritation, and microbe-related soreness.</li>\n<li>Herbal action from ginger, honey, tulsi, curcumin, and piperine for natural soothing.</li>\n<li>Easy-to-use spray format for convenient application.</li>\n<li>Recommended for use as needed or as directed by your healthcare professional.</li>\n</ul>\n<p><strong>Usage:</strong> Spray directly into the throat as required.</p>`
     },
     {
         title: "SALLYPRO PROTEIN",
-        description: "General nutrition, daily supplementation for protein intake, improving vitamins and minerals intake, general fitness and immunity support."
+        description: `<p><strong>General nutrition and daily supplementation:</strong></p>\n<ul>\n<li>Supports muscle growth and recovery with high-quality protein.</li>\n<li>Improves daily intake of essential vitamins and minerals.</li>\n<li>Helps maintain general fitness and immunity for all age groups.</li>\n<li>Easy to mix with milk or water for a delicious, healthy drink.</li>\n</ul>\n<p><strong>Recommended Usage:</strong> Take 1-2 scoops daily or as directed by your healthcare professional.</p>`
     },
     {
         title: "SALLYPRO C CARDIAC FORMULA",
@@ -108,7 +109,7 @@ export const useCases: UseCase[] = [
     },
     {
         title: "SALLYPRO D DIABESITY FORMULA",
-        description: "Metabolic support, weight management, anti-inflammatory benefits, controlled carbohydrate metabolism, high fiber, EPA-DHA, green tea extract, CLA, Garcinia."
+        description: `<p><strong>Metabolic support and weight management:</strong></p>\n<ul>\n<li>Formulated for healthy carbohydrate metabolism and weight control.</li>\n<li>Contains high fiber, EPA-DHA, green tea extract, CLA, and Garcinia Cambogia for comprehensive metabolic support.</li>\n<li>Provides anti-inflammatory and antioxidant benefits for overall wellness.</li>\n<li>Recommended for daily use as part of a balanced diet and active lifestyle.</li>\n</ul>\n<p><strong>Usage:</strong> Take 1-2 servings daily or as directed by your healthcare professional.</p>`
     }
 ];
 
@@ -118,6 +119,7 @@ export const products: Product[] = [
         title: "SORE THROAT & COUGH RELIEF SPRAY",
         subtitle: "30 ml - Anise Flavour",
         description: "Spray formulation intended for throat discomfort relief, coughing, and soreness.",
+        additional_description: `<p><strong>Why choose SORE THROAT & COUGH RELIEF SPRAY?</strong></p>\n<ul>\n<li>Provides fast relief from throat discomfort and cough.</li>\n<li>Contains natural ingredients: Ginger, Tulsi, Honey, Curcumin, Piperin.</li>\n<li>Gluten Free and Sugar Free for safe daily use.</li>\n<li>Easy-to-use spray format for on-the-go relief.</li>\n</ul>\n<p><strong>Usage:</strong> Spray directly into the throat as needed, or as directed by your healthcare professional.</p>`,
         image: "/Throatwal Spray.png",
         features: [
             "Brand: INVAR",
@@ -133,6 +135,7 @@ export const products: Product[] = [
         title: "SALLYPRO PROTEIN POWDER (Mango)",
         subtitle: "200 gm - Mango Flavour",
         description: "Protein Powder Enriched With Vitamin, Minerals & Zinc & DHA. A daily nutrition supplement.",
+        additional_description: `<p><strong>Why choose SALLYPRO Protein Powder (Mango)?</strong></p>\n<ul>\n<li>Delicious mango flavor for enjoyable daily nutrition.</li>\n<li>Supports muscle recovery and growth with high-quality protein.</li>\n<li>Enriched with essential vitamins and minerals for immunity and vitality.</li>\n<li>Contains DHA for brain health.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
         image: "/01.png",
         features: [
             "Enriched with Vitamins, Minerals & Zinc",
@@ -155,7 +158,7 @@ export const products: Product[] = [
                         ["L-Lysine", "25 mg", "7.5 mg", "-"],
                         ["Glutamic Acid", "10 mg", "3 mg", "-"],
                         ["Choline Bitartrate", "65 mg", "19.5 mg", "-"],
-                        ["DHA (10%)", "100 mg", "30 mg", "-"]
+                        ["DHA (10%)", "100 mg", "30 mg", "-"],
                     ]
                 },
                 {
@@ -170,7 +173,7 @@ export const products: Product[] = [
                         ["B2", "3 mg", "0.9 mg", "36%"],
                         ["B3", "50 mg", "15 mg", "83.33%"],
                         ["B6", "5 mg", "1.5 mg", "62.56%"],
-                        ["B12", "6 mcg", "1.8 mcg", "81.81%"]
+                        ["B12", "6 mcg", "1.8 mcg", "81.81%"],
                     ]
                 },
                 {
@@ -191,7 +194,7 @@ export const products: Product[] = [
                         ["Phosphorus", "900 mg", "270 mg", "27%"],
                         ["Manganese", "5 mg", "1.5 mg", "37.5%"],
                         ["Selenium", "24 mcg", "7.2 mcg", "18%"],
-                        ["Chromium", "75 mcg", "22.5 mcg", "45%"]
+                        ["Chromium", "75 mcg", "22.5 mcg", "45%"],
                     ]
                 }
             ]
@@ -204,6 +207,7 @@ export const products: Product[] = [
         title: "SALLYPRO PROTEIN POWDER (Chocolate)",
         subtitle: "200 gm - Chocolate Flavour",
         description: "Protein Powder Enriched With Vitamin, Minerals & Zinc & DHA. A daily nutrition supplement.",
+        additional_description: `<p><strong>Why choose SALLYPRO Protein Powder (Chocolate)?</strong></p>\n<ul>\n<li>Formulated for daily nutrition and overall wellness.</li>\n<li>Supports muscle recovery and growth with high-quality protein.</li>\n<li>Enriched with essential vitamins and minerals for immunity and vitality.</li>\n<li>Delicious chocolate flavor makes it enjoyable for all ages.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
         image: "/03.png",
         features: [
             "Enriched with Vitamins, Minerals & Zinc",
@@ -275,6 +279,7 @@ export const products: Product[] = [
         title: "SALLYPRO D DIABESITY POWDER",
         subtitle: "200 gm - Vanilla Flavour",
         description: "Enriched with whey protein, Omega 3, fibers, CLA, Garcinia Cambogia Extract, micronutrients, antioxidants, and vitamins.",
+        additional_description: `<p><strong>Why choose SALLYPRO D DIABESITY POWDER?</strong></p>\n<ul>\n<li>Formulated for weight management and metabolic support.</li>\n<li>Contains Omega 3, CLA, Garcinia Cambogia, and high fiber.</li>\n<li>Supports healthy carbohydrate metabolism and antioxidant defense.</li>\n<li>No added sugar, suitable for daily use.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with water or milk, stir well, and consume daily or as directed by your healthcare professional.</p>`,
         image: "/01.png",
         features: [
             "No added sugar / Sugar Free",
@@ -329,7 +334,7 @@ export const products: Product[] = [
         title: "SALLYPRO C CARDIAC PROTEIN POWDER",
         subtitle: "200 gm - Dry Fruits Flavour",
         description: "Protein Powder with Arjuna and Beetroot Extract. Intended for heart health and cardiac wellness.",
-        image: "/04.png",
+        additional_description: `<p><strong>Why choose SALLYPRO C CARDIAC PROTEIN POWDER?</strong></p>\n<ul>\n<li>Specially formulated for heart health and cardiac wellness.</li>\n<li>Contains Arjuna and Beetroot Extract for circulation and antioxidant support.</li>\n<li>Enriched with essential vitamins and minerals for daily nutrition.</li>\n<li>Delicious dry fruits flavor for enjoyable supplementation.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
         features: [
             "Enriched with Arjuna & Beetroot Extract",
             "Daily Nutrition Supplement for Heart Health",

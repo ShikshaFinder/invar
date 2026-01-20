@@ -81,15 +81,7 @@ export default async function NutritionPage({ params }: { params: Promise<{ id: 
                             </div>
                         ))}
 
-                        {/* View Detailed Document Button */}
-                        {product.file && product.file.endsWith('.docx') && (
-                            <div className="mt-8 pt-8 border-t border-neutral-200">
-                                <DocViewer filePath={product.file} buttonText="View Detailed Information" />
-                                <p className="mt-2 text-sm text-neutral-500">
-                                    Click to view the complete document with detailed research and benefits
-                                </p>
-                            </div>
-                        )}
+                        {/* View Detailed Document Button removed as per requirements */}
                     </div>
                 </div>
             </div>

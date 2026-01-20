@@ -4,16 +4,17 @@ import { useState } from "react";
 import mammoth from "mammoth";
 import "./doc-viewer.css";
 
-interface DocViewerProps {
     filePath: string;
     buttonText?: string;
+    description?: string;
 }
 
-export default function DocViewer({ filePath, buttonText = "View Detailed Information" }: DocViewerProps) {
+export default function DocViewer({ filePath, buttonText = "View Detailed Information", description }: DocViewerProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [content, setContent] = useState<string>("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [showFullDescription, setShowFullDescription] = useState(false);
 
     const loadDocument = async () => {
         setLoading(true);
@@ -104,6 +105,33 @@ export default function DocViewer({ filePath, buttonText = "View Detailed Inform
 
                         {/* Modal Body - Scrollable Content */}
                         <div className="flex-1 overflow-y-auto p-6">
+                            {/* Description Box with Read More */}
+                            {description && (
+                                <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+                                    {(() => {
+                                        const words = description.split(/\s+/);
+                                        if (words.length > 100 && !showFullDescription) {
+                                            return <>
+                                                {words.slice(0, 100).join(' ')}...
+                                                <button
+                                                    className="ml-2 text-blue-600 dark:text-blue-400 underline text-sm font-medium"
+                                                    onClick={() => setShowFullDescription(true)}
+                                                >Read More</button>
+                                            </>;
+                                        } else if (words.length > 100 && showFullDescription) {
+                                            return <>
+                                                {description}
+                                                <button
+                                                    className="ml-2 text-blue-600 dark:text-blue-400 underline text-sm font-medium"
+                                                    onClick={() => setShowFullDescription(false)}
+                                                >Show Less</button>
+                                            </>;
+                                        } else {
+                                            return description;
+                                        }
+                                    })()}
+                                </div>
+                            )}
                             <div 
                                 className="doc-content"
                                 dangerouslySetInnerHTML={{ __html: content }}

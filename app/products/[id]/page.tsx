@@ -80,6 +80,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const whatsappMessage = encodeURIComponent(`Hi, I'm interested in ${product.title}. Please provide more information.`);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+
     return (
         <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans">
             <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
@@ -164,6 +165,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         {/* Divider */}
                         <hr className="border-neutral-200 dark:border-neutral-800" />
 
+                        {/* Information Box - Additional Description */}
+                        {product.additional_description && product.additional_description.trim() !== "" && (
+                            <div className="prose max-w-none bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-5 my-6">
+                                <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-2">Additional Information</h3>
+                                <div dangerouslySetInnerHTML={{ __html: product.additional_description }} />
+                            </div>
+                        )}
+
                         {/* Action Buttons */}
                         <div className="flex flex-col gap-3 sm:gap-4">
                             {/* Enquiry Button - WhatsApp */}
@@ -190,13 +199,6 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                 Back to Products
                             </Link>
                         </div>
-
-                        {/* View Detailed Document Button */}
-                        {product.file && product.file.endsWith('.docx') && (
-                            <div className="w-full">
-                                <DocViewer filePath={product.file} buttonText="View Detailed Document" />
-                            </div>
-                        )}
                     </div>
                 </div>
 
@@ -334,9 +336,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                             </svg>
                                             <span>{relatedUseCase.title}</span>
                                         </h4>
-                                        <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                                            {relatedUseCase.description}
-                                        </p>
+                                        {/* Use Case Description Box - supports formatted text */}
+                                        <div className="prose max-w-none text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: relatedUseCase.description }} />
                                     </div>
                                 </div>
                             </div>
