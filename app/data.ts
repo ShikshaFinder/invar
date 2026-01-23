@@ -330,63 +330,6 @@ export const products: Product[] = [
         type: "Document",
     },
     {
-        family: "PRODUCT 5",
-        title: "SALLYPRO C CARDIAC PROTEIN POWDER",
-        subtitle: "200 gm - Dry Fruits Flavour",
-        description: "Protein Powder with Arjuna and Beetroot Extract. Intended for heart health and cardiac wellness.",
-        additional_description: `<p><strong>Why choose SALLYPRO C CARDIAC PROTEIN POWDER?</strong></p>\n<ul>\n<li>Specially formulated for heart health and cardiac wellness.</li>\n<li>Contains Arjuna and Beetroot Extract for circulation and antioxidant support.</li>\n<li>Enriched with essential vitamins and minerals for daily nutrition.</li>\n<li>Delicious dry fruits flavor for enjoyable supplementation.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
-        features: [
-            "Enriched with Arjuna & Beetroot Extract",
-            "Daily Nutrition Supplement for Heart Health",
-            "Contains: Calcium, Vitamin D3, Magnesium, Zinc",
-            "With DHA"
-        ],
-        nutrition: {
-            headers: ["Nutrients", "Per 100g", "Per 30g"],
-            sections: [
-                {
-                    title: "Nutritional Information",
-                    items: [
-                        ["Energy", "358.9 Kcal", "107.67 Kcal"],
-                        ["Carbohydrate", "75 gm", "22.5 gm"],
-                        ["Protein", "10 gm", "3 gm"],
-                        ["Fat", "2.1 gm", "0.63 gm"],
-                        ["Potassium", "480 mg", "144 mg"],
-                        ["Chloride", "450 mg", "135 mg"],
-                        ["Sodium", "350 mg", "105 mg"],
-                        ["Calcium", "310 mg", "93 mg"],
-                        ["Phosphorus", "300 mg", "90 mg"],
-                        ["Choline", "80 mg", "24 mg"],
-                        ["Magnesium", "60 mg", "18 mg"],
-                        ["Arjuna Extract", "50 mg", "15 mg"],
-                        ["Beetroot Extract", "25 mg", "7.5 mg"],
-                        ["Niacinamide", "6.5 mg", "1.95 mg"],
-                        ["Vitamin E Acetate", "6 mg", "1.8 mg"],
-                        ["Zinc", "3.5 mg", "1.05 mg"],
-                        ["Vitamin B6", "0.8 mg", "0.24 mg"],
-                        ["Vitamin B2", "0.72 mg", "0.216 mg"],
-                        ["Vitamin B1", "0.65 mg", "0.195 mg"],
-                        ["Copper", "235 mcg", "70.5 mcg"],
-                        ["Folic Acid", "100 mcg", "30 mcg"],
-                        ["Vitamin A (Acetate)", "100 mcg", "30 mcg"],
-                        ["DHA", "80 mg", "24 mg"],
-                        ["Iodine", "40 mcg", "12 mcg"],
-                        ["Molybdenum", "30 mcg", "9 mcg"],
-                        ["Chromium", "25 mcg", "7.5 mcg"],
-                        ["Vitamin K", "25 mcg", "7.5 mcg"],
-                        ["Selenium", "20 mcg", "6 mcg"],
-                        ["Biotin", "12.3 mcg", "3.69 mcg"],
-                        ["Cholecalciferol", "4.2 mcg", "1.26 mcg"],
-                        ["Vitamin B12", "1 mcg", "0.3 mcg"],
-                        ["Manganese", "1 mg", "0.3 mg"]
-                    ]
-                }
-            ]
-        },
-        file: "/Benefits of Arjuna (Terminalia arjuna).docx",
-        type: "Document",
-    },
-    {
         family: "CATALOG",
         title: "Invar Product Catalog",
         subtitle: "Full Catalog",

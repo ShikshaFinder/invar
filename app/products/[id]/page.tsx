@@ -4,10 +4,11 @@ import Image from 'next/image';
 import DocViewer from "../../components/DocViewer";
 
 export async function generateStaticParams() {
-    return products.filter(p => p.family !== "CATALOG").map((_, index) => ({
-        id: index.toString(),
-    }));
+	return products.filter(p => p.family !== "CATALOG").map((_, index) => ({
+		id: index.toString(),
+	}));
 }
+// removed extra closing brace
 
 // Find related ingredient for a product
 function findRelatedIngredient(productTitle: string) {
@@ -426,4 +427,3 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
         </div>
     );
-}
