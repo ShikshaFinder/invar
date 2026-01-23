@@ -60,15 +60,23 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const index = parseInt(id);
     const product = products.filter(p => p.family !== "CATALOG")[index];
 
+    // Compute related ingredients and use case for the product
+    const relatedIngredients = product ? findRelatedIngredient(product.title) : [];
+    const relatedUseCase = product ? findRelatedUseCase(product.title) : null;
+
+    // Define WhatsApp URL (replace with your number if needed)
+    const whatsappUrl = "https://wa.me/917096273336";
+
     if (!product) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-neutral-50">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold mb-4 text-neutral-900">Product Not Found</h1>
-                    <Link href="/" className="text-emerald-600 hover:underline">
-                        return (
-                            <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
-                                <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
+                    <Link href="/" className="text-emerald-600 hover:underline">Go back home</Link>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
@@ -427,3 +435,4 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
         </div>
     );
+}
