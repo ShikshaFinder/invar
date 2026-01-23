@@ -1,9 +1,11 @@
 "use client";
 
+
 import { useState } from "react";
 import mammoth from "mammoth";
 import "./doc-viewer.css";
 
+interface DocViewerProps {
     filePath: string;
     buttonText?: string;
     description?: string;
