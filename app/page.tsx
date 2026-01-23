@@ -85,43 +85,6 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </a>
-
-                  {/* Dropdown Content - Glassmorphic */}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 sm:w-96 lg:w-[420px] max-h-[calc(100vh-120px)] overflow-y-auto bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-neutral-200/50 dark:border-neutral-800/50 p-5 sm:p-6 lg:p-7 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
-                    <div className="space-y-4 sm:space-y-5">
-                      <div className="p-3 sm:p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50 border border-emerald-200/50 dark:border-emerald-800/50">
-                        <h4 className="text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 sm:mb-2">Company</h4>
-                        <p className="font-bold text-sm sm:text-base text-neutral-900 dark:text-neutral-100 leading-tight">
-                          INVAR PHARMACEUTICAL PRIVATE LIMITED
-                        </p>
-                      </div>
-
-                      <div className="bg-neutral-50 dark:bg-neutral-800/50 p-3 sm:p-4 rounded-xl">
-                        <h4 className="text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 sm:mb-2 flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
-                          Address
-                        </h4>
-                        <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                          A-10 Hastinapuri Society, Kishan Samosa no Khacho, College Road, Nadiad
-                        </p>
-                      </div>
-
-                      <div className="bg-neutral-50 dark:bg-neutral-800/50 p-3 sm:p-4 rounded-xl">
-                        <h4 className="text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1 sm:mb-2 flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          About Us
-                        </h4>
-                        <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                          Manufacturing nutraceutical & wellness products: protein powders, cardiac formulations, diabesity-oriented solutions, and throat sprays.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="relative group">
@@ -131,35 +94,6 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </a>
-
-                  {/* Dropdown Content - Glassmorphic */}
-                  <div className="absolute top-full right-0 mt-2 w-72 sm:w-80 lg:w-96 max-h-[calc(100vh-120px)] overflow-y-auto bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-neutral-200/50 dark:border-neutral-800/50 p-4 sm:p-5 lg:p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right translate-y-2 group-hover:translate-y-0">
-                    <div className="flex flex-col gap-2 sm:gap-3">
-                      <a href="tel:+917096273336" className="flex items-center p-3 sm:p-4 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition-all group/item border border-transparent hover:border-emerald-200 dark:hover:border-emerald-800">
-                        <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 dark:from-emerald-900 dark:to-emerald-800 p-2.5 sm:p-3 rounded-xl mr-3 text-emerald-600 dark:text-emerald-400 shadow-lg flex-shrink-0">
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <span className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 font-medium block mb-0.5">Phone</span>
-                          <span className="text-sm sm:text-base font-bold text-neutral-900 dark:text-neutral-100 group-hover/item:text-emerald-600 transition-colors block truncate">+91 70962 73336</span>
-                        </div>
-                      </a>
-
-                      <a href="mailto:invarpharma@gmail.com" className="flex items-center p-3 sm:p-4 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-all group/item border border-transparent hover:border-blue-200 dark:hover:border-blue-800">
-                        <div className="bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 p-2.5 sm:p-3 rounded-xl mr-3 text-blue-600 dark:text-blue-400 shadow-lg flex-shrink-0">
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <span className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 font-medium block mb-0.5">Email</span>
-                          <span className="text-sm sm:text-base font-bold text-neutral-900 dark:text-neutral-100 group-hover/item:text-blue-600 transition-colors block truncate">invarpharma@gmail.com</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
