@@ -61,9 +61,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
     if (!product) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-neutral-50 dark:bg-neutral-950">
+            <div className="min-h-screen flex items-center justify-center bg-neutral-50">
                 <div className="text-center">
-                    <h1 className="text-2xl font-bold mb-4 text-neutral-900 dark:text-white">Product Not Found</h1>
+                    <h1 className="text-2xl font-bold mb-4 text-neutral-900">Product Not Found</h1>
                     <Link href="/" className="text-emerald-600 hover:underline">
                         Return Home
                     </Link>
@@ -82,10 +82,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
 
     return (
-        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans">
+        <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
             <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
                 {/* Breadcrumb Navigation */}
-                <nav className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap pb-2">
+                <nav className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-neutral-500 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap pb-2">
                     <Link href="/" className="hover:text-emerald-600 transition-colors flex-shrink-0">Home</Link>
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -94,16 +94,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="text-neutral-900 dark:text-white font-medium truncate max-w-[150px] sm:max-w-[200px]">{product.title}</span>
+                    <span className="text-neutral-900 font-medium truncate max-w-[150px] sm:max-w-[200px]">{product.title}</span>
                 </nav>
 
                 {/* Product Hero Section - Amazon Style */}
                 <div id="product-details" className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-8 sm:mb-12 scroll-mt-24">
                     {/* Left Side - Product Image */}
                     <div className="lg:sticky lg:top-24 lg:self-start">
-                        <div className="bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-neutral-200 dark:border-neutral-800 shadow-xl">
+                        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-neutral-200 shadow-xl">
                             {product.image && (
-                                <div className="relative w-full aspect-square max-h-[300px] sm:max-h-[400px] lg:max-h-none overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-900">
+                                <div className="relative w-full aspect-square max-h-[300px] sm:max-h-[400px] lg:max-h-none overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50">
                                     <Image
                                         src={product.image}
                                         alt={product.title}
@@ -118,29 +118,29 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     {/* Right Side - Product Information */}
                     <div className="space-y-4 sm:space-y-6">
                         {/* Product Badge */}
-                        <span className="inline-flex items-center rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-50 dark:bg-emerald-900/30">
+                        <span className="inline-flex items-center rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold tracking-wider text-emerald-600 uppercase bg-emerald-50">
                             {product.family}
                         </span>
 
                         {/* Product Title */}
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white leading-tight">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 leading-tight">
                             {product.title}
                         </h1>
 
                         {/* Product Subtitle */}
                         {product.subtitle && (
-                            <p className="text-base sm:text-xl text-emerald-600 dark:text-emerald-400 font-semibold">
+                            <p className="text-base sm:text-xl text-emerald-600 font-semibold">
                                 {product.subtitle}
                             </p>
                         )}
 
                         {/* Divider */}
-                        <hr className="border-neutral-200 dark:border-neutral-800" />
+                        <hr className="border-neutral-200" />
 
                         {/* Product Description */}
                         <div className="space-y-2 sm:space-y-3">
-                            <h3 className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white">About this product</h3>
-                            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                            <h3 className="text-base sm:text-lg font-bold text-neutral-900">About this product</h3>
+                            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                                 {product.description}
                             </p>
                         </div>
@@ -148,10 +148,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         {/* Features */}
                         {product.features && product.features.length > 0 && (
                             <div className="space-y-3 sm:space-y-4">
-                                <h3 className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white">Key Features</h3>
+                                <h3 className="text-base sm:text-lg font-bold text-neutral-900">Key Features</h3>
                                 <ul className="space-y-2 sm:space-y-3">
                                     {product.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
+                                        <li key={i} className="flex items-start text-sm sm:text-base text-neutral-600">
                                             <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                             </svg>
@@ -163,12 +163,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         )}
 
                         {/* Divider */}
-                        <hr className="border-neutral-200 dark:border-neutral-800" />
+                        <hr className="border-neutral-200" />
 
                         {/* Information Box - Additional Description */}
                         {product.additional_description && product.additional_description.trim() !== "" && (
-                            <div className="prose max-w-none bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-5 my-6">
-                                <h3 className="text-lg font-bold text-blue-700 dark:text-blue-300 mb-2">Additional Information</h3>
+                            <div className="prose max-w-none bg-blue-50 border border-blue-200 rounded-xl p-5 my-6">
+                                <h3 className="text-lg font-bold text-blue-700 mb-2">Additional Information</h3>
                                 <div dangerouslySetInnerHTML={{ __html: product.additional_description }} />
                             </div>
                         )}
@@ -191,7 +191,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                             {/* Back to Products Button */}
                             <Link
                                 href="/#products"
-                                className="w-full flex items-center justify-center gap-2 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-2 border-neutral-300 dark:border-neutral-700 px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all"
+                                className="w-full flex items-center justify-center gap-2 bg-white text-neutral-700 border-2 border-neutral-300 px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base hover:bg-neutral-100 transition-all"
                             >
                                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -206,17 +206,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <div className="space-y-6 sm:space-y-8">
                         {/* Nutritional Information */}
                         {product.nutrition && (
-                            <div className="bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-emerald-500/5">
-                                <div className="p-4 sm:p-6 border-b border-neutral-200 dark:border-neutral-800 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30">
+                            <div className="bg-white rounded-2xl sm:rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-emerald-500/5">
+                                <div className="p-4 sm:p-6 border-b border-neutral-200 bg-gradient-to-r from-emerald-50 to-teal-50">
                                     <div className="flex items-center gap-2 sm:gap-3">
-                                        <div className="p-1.5 sm:p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg sm:rounded-xl">
-                                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="p-1.5 sm:p-2 bg-emerald-100 rounded-lg sm:rounded-xl">
+                                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white">Nutritional Information</h2>
-                                            <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">Complete nutritional breakdown</p>
+                                            <h2 className="text-lg sm:text-xl font-bold text-neutral-900">Nutritional Information</h2>
+                                            <p className="text-xs sm:text-sm text-neutral-600">Complete nutritional breakdown</p>
                                         </div>
                                     </div>
                                 </div>
@@ -229,9 +229,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                                     {section.title}
                                                 </h3>
                                             )}
-                                            <div className="overflow-x-auto rounded-lg sm:rounded-xl border border-neutral-200 dark:border-neutral-700 -mx-1 sm:mx-0">
-                                                <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
-                                                    <thead className="bg-neutral-50 dark:bg-neutral-800">
+                                            <div className="overflow-x-auto rounded-lg sm:rounded-xl border border-neutral-200 -mx-1 sm:mx-0">
+                                                <table className="min-w-full divide-y divide-neutral-200">
+                                                    <thead className="bg-neutral-50">
                                                         <tr>
                                                             {product.nutrition?.headers.map((header, hIndex) => (
                                                                 <th key={hIndex} scope="col" className="px-2 sm:px-4 py-2 sm:py-3 text-left text-[10px] sm:text-xs font-bold text-neutral-500 uppercase tracking-wider">
@@ -240,11 +240,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                                             ))}
                                                         </tr>
                                                     </thead>
-                                                    <tbody className="bg-white dark:bg-neutral-900 divide-y divide-neutral-100 dark:divide-neutral-800">
+                                                    <tbody className="bg-white divide-y divide-neutral-100">
                                                         {section.items.map((row, rIndex) => (
-                                                            <tr key={rIndex} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                                                            <tr key={rIndex} className="hover:bg-neutral-50 transition-colors">
                                                                 {row.map((cell, cIndex) => (
-                                                                    <td key={cIndex} className={`px-2 sm:px-4 py-2 sm:py-3 whitespace-normal sm:whitespace-nowrap text-xs sm:text-sm ${cIndex === 0 ? 'font-medium text-neutral-900 dark:text-white' : 'text-neutral-600 dark:text-neutral-400'}`}>
+                                                                    <td key={cIndex} className={`px-2 sm:px-4 py-2 sm:py-3 whitespace-normal sm:whitespace-nowrap text-xs sm:text-sm ${cIndex === 0 ? 'font-medium text-neutral-900' : 'text-neutral-600'}`}>
                                                                         {cell}
                                                                     </td>
                                                                 ))}
@@ -261,25 +261,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         {/* Medical Benefits / Key Ingredients */}
                         {relatedIngredients.length > 0 && (
-                            <div className="bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-blue-500/5">
-                                <div className="p-4 sm:p-6 border-b border-neutral-200 dark:border-neutral-800 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30">
+                            <div className="bg-white rounded-2xl sm:rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-blue-500/5">
+                                <div className="p-4 sm:p-6 border-b border-neutral-200 bg-gradient-to-r from-blue-50 to-indigo-50">
                                     <div className="flex items-center gap-2 sm:gap-3">
-                                        <div className="p-1.5 sm:p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg sm:rounded-xl">
-                                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="p-1.5 sm:p-2 bg-blue-100 rounded-lg sm:rounded-xl">
+                                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white">Medical Benefits</h2>
-                                            <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">Key ingredient health benefits</p>
+                                            <h2 className="text-lg sm:text-xl font-bold text-neutral-900">Medical Benefits</h2>
+                                            <p className="text-xs sm:text-sm text-neutral-600">Key ingredient health benefits</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-3 sm:p-6 space-y-4 sm:space-y-6">
                                     {relatedIngredients.map((ingredient, iIndex) => (
-                                        <div key={iIndex} className="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-neutral-50 dark:bg-neutral-800/50">
+                                        <div key={iIndex} className="flex flex-col gap-4 sm:gap-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-neutral-50">
                                             {ingredient.image && (
-                                                <div className="relative w-full h-24 sm:h-32 flex-shrink-0 overflow-hidden rounded-lg sm:rounded-xl bg-white dark:bg-neutral-800">
+                                                <div className="relative w-full h-24 sm:h-32 flex-shrink-0 overflow-hidden rounded-lg sm:rounded-xl bg-white">
                                                     <Image
                                                         src={ingredient.image}
                                                         alt={ingredient.name}
@@ -289,17 +289,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                                 </div>
                                             )}
                                             <div className="flex-1">
-                                                <h4 className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white mb-2 sm:mb-3">{ingredient.name}</h4>
+                                                <h4 className="text-base sm:text-lg font-bold text-neutral-900 mb-2 sm:mb-3">{ingredient.name}</h4>
                                                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                                     {ingredient.highlights.slice(0, 6).map((highlight, hIndex) => (
-                                                        <span key={hIndex} className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                                                        <span key={hIndex} className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium bg-blue-100 text-blue-700">
                                                             {highlight}
                                                         </span>
                                                     ))}
                                                     {ingredient.highlights.length > 6 && (
                                                         <Link 
                                                             href={`/benefits/${ingredients.indexOf(ingredient)}`}
-                                                            className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                                                            className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium bg-neutral-200 text-neutral-700 hover:bg-blue-100 transition-colors"
                                                         >
                                                             +{ingredient.highlights.length - 6} more →
                                                         </Link>
@@ -314,30 +314,30 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         {/* Use Case Summary */}
                         {relatedUseCase && (
-                            <div className="bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-purple-500/5">
-                                <div className="p-4 sm:p-6 border-b border-neutral-200 dark:border-neutral-800 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
+                            <div className="bg-white rounded-2xl sm:rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-purple-500/5">
+                                <div className="p-4 sm:p-6 border-b border-neutral-200 bg-gradient-to-r from-purple-50 to-pink-50">
                                     <div className="flex items-center gap-2 sm:gap-3">
-                                        <div className="p-1.5 sm:p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg sm:rounded-xl">
-                                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="p-1.5 sm:p-2 bg-purple-100 rounded-lg sm:rounded-xl">
+                                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white">Use Case Summary</h2>
-                                            <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">Applications and recommendations</p>
+                                            <h2 className="text-lg sm:text-xl font-bold text-neutral-900">Use Case Summary</h2>
+                                            <p className="text-xs sm:text-sm text-neutral-600">Applications and recommendations</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-3 sm:p-6">
-                                    <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-100 dark:border-purple-900/30">
-                                        <h4 className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+                                    <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100">
+                                        <h4 className="text-base sm:text-lg font-bold text-neutral-900 mb-2 sm:mb-3 flex items-center gap-2">
                                             <svg className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                             </svg>
                                             <span>{relatedUseCase.title}</span>
                                         </h4>
                                         {/* Use Case Description Box - supports formatted text */}
-                                        <div className="prose max-w-none text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: relatedUseCase.description }} />
+                                        <div className="prose max-w-none text-neutral-700 text-sm sm:text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: relatedUseCase.description }} />
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                 {/* Related Products */}
                 <div className="mt-10 sm:mt-16">
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white mb-4 sm:mb-8">Other Products</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4 sm:mb-8">Other Products</h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
                         {products.filter(p => p.family !== "CATALOG" && p.title !== product.title).slice(0, 3).map((relatedProduct, rpIndex) => {
                             const originalIndex = products.filter(p => p.family !== "CATALOG").findIndex(p => p.title === relatedProduct.title);
@@ -355,10 +355,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                 <Link 
                                     key={rpIndex}
                                     href={`/products/${originalIndex}`}
-                                    className="group bg-white dark:bg-neutral-900 rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-neutral-200 dark:border-neutral-800 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
+                                    className="group bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-neutral-200 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
                                 >
                                     {relatedProduct.image && (
-                                        <div className="relative w-full h-24 sm:h-40 mb-2 sm:mb-4 overflow-hidden rounded-lg sm:rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                                        <div className="relative w-full h-24 sm:h-40 mb-2 sm:mb-4 overflow-hidden rounded-lg sm:rounded-xl bg-neutral-100">
                                             <Image
                                                 src={relatedProduct.image}
                                                 alt={relatedProduct.title}
@@ -367,13 +367,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                             />
                                         </div>
                                     )}
-                                    <span className="inline-flex items-center rounded-full px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-xs font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-50 dark:bg-emerald-900/30 mb-1 sm:mb-2">
+                                    <span className="inline-flex items-center rounded-full px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-xs font-bold tracking-wider text-emerald-600 uppercase bg-emerald-50 mb-1 sm:mb-2">
                                         {relatedProduct.family}
                                     </span>
-                                    <h4 className="text-sm sm:text-lg font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
+                                    <h4 className="text-sm sm:text-lg font-bold text-neutral-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
                                         {relatedProduct.title}
                                     </h4>
-                                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 sm:mt-2 line-clamp-2 hidden sm:block">
+                                    <p className="text-xs sm:text-sm text-neutral-600 mt-1 sm:mt-2 line-clamp-2 hidden sm:block">
                                         {relatedProduct.description}
                                     </p>
                                 </Link>

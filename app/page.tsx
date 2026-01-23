@@ -61,7 +61,33 @@ const FeatureCard = ({
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
+      {/* Hero Section - Antigravity Nutrition (very top) */}
+      <HeroSection
+        badge={{
+          text: "🚀 New Launch",
+          action: {
+            text: "Explore Products",
+            href: "#products"
+          }
+        }}
+        title="Antigravity Nutrition"
+        subtitle="Science-backed supplements for real performance"
+        description="Premium quality nutraceutical solutions crafted with precision and backed by science for your health and wellness journey."
+        actions={[
+          {
+            text: "Shop Now",
+            href: "#products",
+            variant: "glow"
+          },
+          {
+            text: "Learn More",
+            href: "#about",
+            variant: "outline"
+          }
+        ]}
+      />
+
       {/* Navigation - Modern Glassmorphic */}
       <nav className="fixed w-full z-50 bg-white/70 dark:bg-neutral-950/70 backdrop-blur-xl border-b border-neutral-200/50 dark:border-neutral-800/50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
@@ -106,31 +132,29 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <HeroSection
-        badge={{
-          text: "🚀 New Launch",
-          action: {
-            text: "Explore Products",
-            href: "#products"
-          }
-        }}
-        title="Antigravity Nutrition"
-        subtitle="Science-backed supplements for real performance"
-        description="Premium quality nutraceutical solutions crafted with precision and backed by science for your health and wellness journey."
-        actions={[
-          {
-            text: "Shop Now",
-            href: "#products",
-            variant: "glow"
-          },
-          {
-            text: "Learn More",
-            href: "#about",
-            variant: "outline"
-          }
-        ]}
-      />
+
+      {/* Company Overview Section (like About) */}
+      {/* Company Vision, Mission, Specialization Section */}
+      <section id="company-info" className="py-12 sm:py-20 lg:py-28 bg-white relative overflow-hidden">
+        <div className="max-w-3xl mx-auto px-4 sm:px-8">
+          <div className="bg-white rounded-2xl shadow-xl border border-emerald-100 p-8 flex flex-col gap-6">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-emerald-700 mb-2">Innovating Nutritional Support For Specialized Health</h2>
+            <p className="text-neutral-700 text-base mb-2">At <b>Invar Pharmaceutical Pvt Ltd.</b>, we are dedicated to bridging the gap between clinical nutrition and everyday wellness. As a forward-thinking pharmaceutical company, we specialize in developing high-quality nutraceutical solutions designed to support patients with specific medical needs.</p>
+            <p className="text-neutral-700 text-base mb-2">Under the visionary leadership of our directors, <b>Mr. Dhaval Dalwadi</b> and <b>Mr. Mahendra Patel</b>, we combine scientific rigor with a passion for health to create products that make a tangible difference in people's lives.</p>
+            <ul className="list-disc list-inside text-neutral-700 text-base mb-4">
+              <li><b>Vision:</b> To lead globally in therapeutic nutrition by empowering individuals with specialized health needs to live healthier lives.</li>
+              <li><b>Mission:</b> To improve healthcare outcomes by offering high-quality, science-based nutritional products that cater to specific medical conditions.</li>
+            </ul>
+            <h3 className="text-xl font-bold text-emerald-700 mt-4 mb-2">Our Specialization: Precision Nutrition</h3>
+            <p className="text-neutral-700 text-base mb-2">We recognize that standard nutritional supplements often fall short for individuals managing chronic conditions or undergoing significant physiological changes. That is why our flagship line of <b>Protein Powders</b> is scientifically formulated for three primary segments:</p>
+            <ul className="list-disc list-inside text-neutral-700 text-base">
+              <li><b>Cardiac Care:</b> Formulated to support heart health with heart-healthy ingredients and low sodium profiles.</li>
+              <li><b>Diabetic Management:</b> Engineered with a low glycemic index and specialized fiber blends to help manage blood sugar levels while providing essential amino acids.</li>
+              <li><b>Pregnancy & Maternal Health:</b> Designed to provide the vital protein and micronutrients necessary for both maternal wellbeing and healthy fetal development.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* Products Section - Modern Card Grid with Hover Effects */}
       <section id="products" className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
