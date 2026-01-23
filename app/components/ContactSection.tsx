@@ -22,10 +22,10 @@ const ContactFeature = ({
     return (
         <div
             className={cn(
-                "flex flex-col border-b py-5 sm:py-6 lg:py-8 relative group/feature dark:border-emerald-800/50 border-emerald-200 last:border-b-0 hover:bg-emerald-50/50 dark:hover:bg-emerald-950/20 transition-all duration-300"
+                "flex flex-col border-b py-5 sm:py-6 lg:py-8 relative group/feature border-emerald-200 last:border-b-0 hover:bg-emerald-50/50 transition-all duration-300"
             )}
         >
-            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-r from-emerald-100/50 via-teal-100/30 to-transparent dark:from-emerald-900/30 dark:via-teal-900/20 dark:to-transparent pointer-events-none" />
+            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-r from-emerald-100/50 via-teal-100/30 to-transparent pointer-events-none" />
             
             <div className="mb-3 sm:mb-4 relative z-10 px-5 sm:px-6 lg:px-8">
                 <div className="p-2 sm:p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg w-fit text-white">
@@ -33,16 +33,16 @@ const ContactFeature = ({
                 </div>
             </div>
             <div className="text-base sm:text-lg font-bold mb-1.5 sm:mb-2 relative z-10 px-5 sm:px-6 lg:px-8">
-                <div className="absolute left-0 inset-y-0 h-5 sm:h-6 group-hover/feature:h-7 sm:group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-emerald-400 dark:bg-emerald-600 group-hover/feature:bg-emerald-500 transition-all duration-200 origin-center shadow-md" />
-                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-900 dark:text-white">
+                <div className="absolute left-0 inset-y-0 h-5 sm:h-6 group-hover/feature:h-7 sm:group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-emerald-400 group-hover/feature:bg-emerald-500 transition-all duration-200 origin-center shadow-md" />
+                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-900">
                     {title}
                 </span>
             </div>
             <ContentWrapper 
                 {...(href && { href })}
                 className={cn(
-                    "text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 relative z-10 px-5 sm:px-6 lg:px-8 leading-relaxed",
-                    href && "hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer underline decoration-emerald-500/30 underline-offset-2"
+                    "text-xs sm:text-sm text-neutral-600 relative z-10 px-5 sm:px-6 lg:px-8 leading-relaxed",
+                    href && "hover:text-emerald-600 transition-colors cursor-pointer underline decoration-emerald-500/30 underline-offset-2"
                 )}
             >
                 {content}
@@ -96,7 +96,7 @@ export default function ContactSection() {
     ];
 
     return (
-        <section id="contact" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-neutral-50 via-white to-emerald-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-emerald-950/20 text-foreground relative overflow-hidden">
+        <section id="contact" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-neutral-50 via-white to-emerald-50/30 text-foreground relative overflow-hidden">
             {/* Gradient Background Effect */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMGRjODIiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00em0tMiAwYzAgMS4xMDUtLjg5NSAyLTIgMnMtMi0uODk1LTItMiAuODk1LTIgMi0yIDIgLjg5NSAyIDJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-40" />
             <div className="absolute top-10 right-10 w-64 h-64 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
@@ -105,8 +105,8 @@ export default function ContactSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header with gradient text */}
                 <div className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-6 text-center mb-8 sm:mb-12 lg:mb-20">
-                    <div className="inline-flex items-center rounded-full px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 lg:py-3 text-xs sm:text-sm lg:text-base font-semibold bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 text-emerald-700 dark:text-emerald-300 ring-2 ring-inset ring-emerald-500/30 shadow-lg shadow-emerald-500/10">
-                        <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="inline-flex items-center rounded-full px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 lg:py-3 text-xs sm:text-sm lg:text-base font-semibold bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 ring-2 ring-inset ring-emerald-500/30 shadow-lg shadow-emerald-500/10">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         Contact Us
@@ -114,14 +114,14 @@ export default function ContactSection() {
                     <h2 className="relative z-10 inline-block bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 bg-clip-text text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold leading-tight text-transparent">
                         Get in Touch
                     </h2>
-                    <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-xl xl:text-2xl text-neutral-600 dark:text-neutral-400 font-medium px-4">
+                    <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-xl xl:text-2xl text-neutral-600 font-medium px-4">
                         Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
                     {/* Contact Features with Hover Effects */}
-                    <div className="lg:col-span-2 grid grid-cols-1 relative z-10 bg-white dark:bg-neutral-800 rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 border-emerald-200 dark:border-emerald-800/50 shadow-2xl shadow-emerald-500/10 overflow-hidden">
+                    <div className="lg:col-span-2 grid grid-cols-1 relative z-10 bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 border-emerald-200 shadow-2xl shadow-emerald-500/10 overflow-hidden">
                         {contactFeatures.map((feature, index) => (
                             <ContactFeature
                                 key={feature.title}
@@ -137,7 +137,7 @@ export default function ContactSection() {
                     {/* WhatsApp Integration with Glass Effect */}
                     <div className="lg:col-span-3 relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl sm:rounded-2xl lg:rounded-3xl blur-xl" />
-                        <div className="relative bg-white dark:bg-neutral-800 p-5 sm:p-6 lg:p-10 xl:p-12 rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 border-emerald-200 dark:border-emerald-800/50 shadow-2xl shadow-emerald-500/10 flex flex-col justify-center">
+                        <div className="relative bg-white p-5 sm:p-6 lg:p-10 xl:p-12 rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 border-emerald-200 shadow-2xl shadow-emerald-500/10 flex flex-col justify-center">
                             <div className="flex items-start sm:items-center gap-3 lg:gap-4 mb-2 lg:mb-4">
                                 <div className="p-2 sm:p-2.5 lg:p-3 rounded-lg lg:rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg flex-shrink-0">
                                     <svg className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -145,17 +145,17 @@ export default function ContactSection() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-bold text-neutral-900 dark:text-white">Send us a Message</h3>
-                                    <p className="text-xs sm:text-sm lg:text-base text-emerald-600 dark:text-emerald-400 font-semibold">WhatsApp Direct Contact</p>
+                                    <h3 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-bold text-neutral-900">Send us a Message</h3>
+                                    <p className="text-xs sm:text-sm lg:text-base text-emerald-600 font-semibold">WhatsApp Direct Contact</p>
                                 </div>
                             </div>
-                            <p className="text-xs sm:text-sm lg:text-lg xl:text-xl text-neutral-600 dark:text-neutral-300 mb-4 sm:mb-6 lg:mb-8">
+                            <p className="text-xs sm:text-sm lg:text-lg xl:text-xl text-neutral-600 mb-4 sm:mb-6 lg:mb-8">
                                 Connect with us instantly on WhatsApp for quick responses.
                             </p>
 
                             <div className="space-y-3 sm:space-y-4">
                                 <div className="relative">
-                                    <label htmlFor="message" className="block text-xs sm:text-sm font-bold text-neutral-700 dark:text-neutral-300 mb-1.5 sm:mb-2 uppercase tracking-wider">
+                                    <label htmlFor="message" className="block text-xs sm:text-sm font-bold text-neutral-700 mb-1.5 sm:mb-2 uppercase tracking-wider">
                                         Your Message
                                     </label>
                                     <div className={cn(
@@ -165,7 +165,7 @@ export default function ContactSection() {
                                         <textarea
                                             id="message"
                                             rows={4}
-                                            className="w-full rounded-lg sm:rounded-xl border-2 border-neutral-300 dark:border-neutral-700 shadow-sm focus:border-emerald-500 focus:ring-0 focus:outline-none bg-neutral-50 dark:bg-neutral-900/50 text-neutral-900 dark:text-white p-3 sm:p-4 text-sm sm:text-base transition-all resize-none"
+                                            className="w-full rounded-lg sm:rounded-xl border-2 border-neutral-300 shadow-sm focus:border-emerald-500 focus:ring-0 focus:outline-none bg-neutral-50 text-neutral-900 p-3 sm:p-4 text-sm sm:text-base transition-all resize-none"
                                             placeholder="Hi, I would like to know more about your products..."
                                             value={message}
                                             onChange={(e) => setMessage(e.target.value)}
@@ -190,14 +190,14 @@ export default function ContactSection() {
                             </div>
 
                             {/* Quick action buttons */}
-                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t-2 border-emerald-100 dark:border-emerald-900/50">
-                                <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-semibold mb-2 sm:mb-3">Quick messages:</p>
+                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t-2 border-emerald-100">
+                                <p className="text-xs sm:text-sm text-neutral-600 font-semibold mb-2 sm:mb-3">Quick messages:</p>
                                 <div className="flex flex-wrap gap-2">
                                     {["Product Inquiry", "Bulk Order", "Distribution"].map((quick) => (
                                         <button
                                             key={quick}
                                             onClick={() => setMessage(`Hi, I'm interested in ${quick.toLowerCase()}. Could you please provide more information?`)}
-                                            className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-600 dark:hover:text-white transition-all duration-300 border-2 border-emerald-200 dark:border-emerald-800/50 font-semibold shadow-sm hover:shadow-md hover:scale-105"
+                                            className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full bg-emerald-100 text-emerald-700 hover:bg-emerald-500 hover:text-white transition-all duration-300 border-2 border-emerald-200 font-semibold shadow-sm hover:shadow-md hover:scale-105"
                                         >
                                             {quick}
                                         </button>

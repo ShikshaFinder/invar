@@ -35,18 +35,18 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
 
   const buttonStyles = {
     default: cn(
-      "h-12 bg-white dark:bg-zinc-900",
-      "hover:bg-zinc-50 dark:hover:bg-zinc-800",
-      "text-zinc-900 dark:text-zinc-100",
-      "border border-zinc-200 dark:border-zinc-800",
-      "hover:border-zinc-300 dark:hover:border-zinc-700",
+      "h-12 bg-white",
+      "hover:bg-zinc-50",
+      "text-zinc-900",
+      "border border-zinc-200",
+      "hover:border-zinc-300",
       "shadow-sm hover:shadow-md",
       "text-sm font-medium",
     ),
     highlight: cn(
-      "h-12 bg-zinc-900 dark:bg-zinc-100",
-      "hover:bg-zinc-800 dark:hover:bg-zinc-300",
-      "text-white dark:text-zinc-900",
+      "h-12 bg-zinc-900",
+      "hover:bg-zinc-800",
+      "text-white",
       "shadow-[0_1px_15px_rgba(0,0,0,0.1)]",
       "hover:shadow-[0_1px_20px_rgba(0,0,0,0.15)]",
       "font-semibold text-base",
@@ -55,8 +55,8 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
 
   const badgeStyles = cn(
     "px-4 py-1.5 text-sm font-medium",
-    "bg-zinc-900 dark:bg-zinc-100",
-    "text-white dark:text-zinc-900",
+    "bg-zinc-900",
+    "text-white",
     "border-none shadow-lg",
   )
 
@@ -71,10 +71,10 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
     >
       <div className="w-full max-w-5xl mx-auto">
         <div className="flex flex-col items-center gap-4 mb-12">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-3xl font-bold text-zinc-900">
             Simple, transparent pricing
           </h2>
-          <div className="inline-flex items-center p-1.5 bg-white dark:bg-zinc-800/50 rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm">
+          <div className="inline-flex items-center p-1.5 bg-white rounded-full border border-zinc-200 shadow-sm">
             {["Monthly", "Yearly"].map((period) => (
               <button
                 key={period}
@@ -82,8 +82,8 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
                 className={cn(
                   "px-8 py-2.5 text-sm font-medium rounded-full transition-all duration-300",
                   (period === "Yearly") === isYearly
-                    ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-lg"
-                    : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100",
+                    ? "bg-zinc-900 text-white shadow-lg"
+                    : "text-zinc-600 hover:text-zinc-900",
                 )}
               >
                 {period}
@@ -101,12 +101,12 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
                 "rounded-3xl transition-all duration-300",
                 "flex flex-col",
                 tier.highlight
-                  ? "bg-gradient-to-b from-zinc-100/80 to-transparent dark:from-zinc-400/[0.15]"
-                  : "bg-white dark:bg-zinc-800/50",
+                  ? "bg-gradient-to-b from-zinc-100/80 to-transparent"
+                  : "bg-white",
                 "border",
                 tier.highlight
-                  ? "border-zinc-400/50 dark:border-zinc-400/20 shadow-xl"
-                  : "border-zinc-200 dark:border-zinc-700 shadow-md",
+                  ? "border-zinc-400/50 shadow-xl"
+                  : "border-zinc-200 shadow-md",
                 "hover:translate-y-0 hover:shadow-lg",
               )}
             >
@@ -122,27 +122,27 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
                     className={cn(
                       "p-3 rounded-xl",
                       tier.highlight
-                        ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100"
-                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
+                        ? "bg-zinc-100 text-zinc-900"
+                        : "bg-zinc-100 text-zinc-600",
                     )}
                   >
                     {tier.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="text-xl font-semibold text-zinc-900">
                     {tier.name}
                   </h3>
                 </div>
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-zinc-900 dark:text-zinc-100">
+                    <span className="text-4xl font-bold text-zinc-900">
                       ${isYearly ? tier.price.yearly : tier.price.monthly}
                     </span>
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                    <span className="text-sm text-zinc-500">
                       /{isYearly ? "year" : "month"}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                  <p className="mt-2 text-sm text-zinc-600">
                     {tier.description}
                   </p>
                 </div>
@@ -154,17 +154,17 @@ function PricingSection({ tiers, className }: PricingSectionProps) {
                         className={cn(
                           "mt-1 p-0.5 rounded-full transition-colors duration-200",
                           feature.included
-                            ? "text-emerald-600 dark:text-emerald-400"
-                            : "text-zinc-400 dark:text-zinc-600",
+                            ? "text-emerald-600"
+                            : "text-zinc-400",
                         )}
                       >
                         <CheckIcon className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                        <div className="text-sm font-medium text-zinc-900">
                           {feature.name}
                         </div>
-                        <div className="text-sm text-zinc-500 dark:text-zinc-400">
+                        <div className="text-sm text-zinc-500">
                           {feature.description}
                         </div>
                       </div>

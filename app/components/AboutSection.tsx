@@ -18,23 +18,23 @@ const AboutFeatureCard = ({
     return (
         <div
             className={cn(
-                "flex flex-col lg:border-r py-8 relative group/feature dark:border-neutral-800 border-neutral-200",
-                index === 0 && "lg:border-l dark:border-neutral-800 border-neutral-200",
-                "lg:border-b dark:border-neutral-800 border-neutral-200"
+                "flex flex-col lg:border-r py-8 relative group/feature border-neutral-200",
+                index === 0 && "lg:border-l border-neutral-200",
+                "lg:border-b border-neutral-200"
             )}
         >
-            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-emerald-100/50 dark:from-emerald-900/20 to-transparent pointer-events-none" />
+            <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-emerald-100/50 to-transparent pointer-events-none" />
             
-            <div className="mb-4 relative z-10 px-8 text-emerald-600 dark:text-emerald-400">
+            <div className="mb-4 relative z-10 px-8 text-emerald-600">
                 {icon}
             </div>
             <div className="text-lg font-bold mb-2 relative z-10 px-8">
-                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-emerald-500 transition-all duration-200 origin-center" />
-                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 group-hover/feature:bg-emerald-500 transition-all duration-200 origin-center" />
+                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800">
                     {title}
                 </span>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10 px-8">
+            <p className="text-sm text-neutral-600 relative z-10 px-8">
                 {description}
             </p>
         </div>
@@ -130,7 +130,7 @@ export default function AboutSection() {
     ];
 
     return (
-        <section id="about" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-neutral-50 via-white to-emerald-50/30 dark:from-neutral-950 dark:via-neutral-900 dark:to-emerald-950/20 relative overflow-hidden">
+        <section id="about" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-neutral-50 via-white to-emerald-50/30 relative overflow-hidden">
             {/* Enhanced Background Effects */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMGRjODIiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMDktMS43OTEtNC00LTRzLTQgMS43OTEtNCA0IDEuNzkxIDQgNCA0IDQtMS43OTEgNC00em0tMiAwYzAgMS4xMDUtLjg5NSAyLTIgMnMtMi0uODk1LTItMiAuODk1LTIgMi0yIDIgLjg5NSAyIDJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-40" />
             <div className="absolute top-10 right-10 w-64 h-64 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" />
@@ -139,8 +139,8 @@ export default function AboutSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <div className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-6 text-center mb-10 sm:mb-12 lg:mb-20">
-                    <div className="inline-flex items-center rounded-full px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 lg:py-3 text-xs sm:text-sm lg:text-base font-semibold bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 text-emerald-700 dark:text-emerald-300 ring-2 ring-inset ring-emerald-500/30 shadow-lg shadow-emerald-500/10">
-                        <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="inline-flex items-center rounded-full px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 lg:py-3 text-xs sm:text-sm lg:text-base font-semibold bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 ring-2 ring-inset ring-emerald-500/30 shadow-lg shadow-emerald-500/10">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-2 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                         About Us
@@ -148,7 +148,7 @@ export default function AboutSection() {
                     <h2 className="relative z-10 inline-block bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 bg-clip-text text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold leading-tight text-transparent">
                         {companyInfo.name}
                     </h2>
-                    <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-xl xl:text-2xl text-neutral-600 dark:text-neutral-400 font-medium px-4">
+                    <p className="max-w-2xl lg:max-w-3xl text-sm sm:text-base lg:text-xl xl:text-2xl text-neutral-600 font-medium px-4">
                         {companyInfo.tagline}
                     </p>
                 </div>
@@ -156,7 +156,7 @@ export default function AboutSection() {
                 {/* Main Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 xl:gap-20 mb-12 sm:mb-16 lg:mb-24 xl:mb-32">
                     {/* Company Description Card */}
-                    <div className="bg-white dark:bg-neutral-800 p-6 sm:p-8 lg:p-12 xl:p-14 rounded-2xl sm:rounded-3xl border-2 border-emerald-200 dark:border-emerald-800/50 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all duration-300 hover:scale-[1.02]">
+                    <div className="bg-white p-6 sm:p-8 lg:p-12 xl:p-14 rounded-2xl sm:rounded-3xl border-2 border-emerald-200 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all duration-300 hover:scale-[1.02]">
                         <div className="flex items-start sm:items-center gap-3 sm:gap-4 lg:gap-5 mb-4 sm:mb-6 lg:mb-8">
                             <div className="p-2.5 sm:p-3 lg:p-4 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl shadow-lg">
                                 <svg className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,58 +164,58 @@ export default function AboutSection() {
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-bold text-neutral-900 dark:text-white">Our Company</h3>
-                                <p className="text-xs sm:text-sm lg:text-base text-emerald-600 dark:text-emerald-400 font-semibold">Nutraceutical Excellence</p>
+                                <h3 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-bold text-neutral-900">Our Company</h3>
+                                <p className="text-xs sm:text-sm lg:text-base text-emerald-600 font-semibold">Nutraceutical Excellence</p>
                             </div>
                         </div>
-                        <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6 sm:mb-8 lg:mb-10">
+                        <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-neutral-600 leading-relaxed mb-6 sm:mb-8 lg:mb-10">
                             {companyInfo.description}
                         </p>
                         
                         {/* Company Details */}
-                        <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6 border-t-2 border-emerald-100 dark:border-emerald-900/50">
+                        <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6 border-t-2 border-emerald-100">
                             <div className="flex items-start gap-3">
-                                <div className="p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg">
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-2 bg-emerald-100 rounded-lg">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
                                 <div className="flex-1">
-                                    <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-0.5">Address</p>
-                                    <p className="text-sm sm:text-base text-neutral-900 dark:text-white font-medium">{companyInfo.address}</p>
+                                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-0.5">Address</p>
+                                    <p className="text-sm sm:text-base text-neutral-900 font-medium">{companyInfo.address}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-2 bg-blue-100 rounded-lg">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
                                 <div className="flex-1">
-                                    <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-0.5">Email</p>
-                                    <a href={`mailto:${companyInfo.email}`} className="text-sm sm:text-base text-neutral-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium underline decoration-emerald-500/30 underline-offset-2">{companyInfo.email}</a>
+                                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-0.5">Email</p>
+                                    <a href={`mailto:${companyInfo.email}`} className="text-sm sm:text-base text-neutral-900 hover:text-emerald-600 transition-colors font-medium underline decoration-emerald-500/30 underline-offset-2">{companyInfo.email}</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg">
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="p-2 bg-emerald-100 rounded-lg">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
                                 </div>
                                 <div className="flex-1">
-                                    <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-0.5">Phone</p>
-                                    <a href={`tel:${companyInfo.phone}`} className="text-sm sm:text-base text-neutral-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium underline decoration-emerald-500/30 underline-offset-2">{companyInfo.phone}</a>
+                                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-0.5">Phone</p>
+                                    <a href={`tel:${companyInfo.phone}`} className="text-sm sm:text-base text-neutral-900 hover:text-emerald-600 transition-colors font-medium underline decoration-emerald-500/30 underline-offset-2">{companyInfo.phone}</a>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-neutral-200 dark:border-neutral-700">
-                                <div className="bg-neutral-50 dark:bg-neutral-900/50 p-3 rounded-lg">
-                                    <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">GSTIN</p>
-                                    <p className="text-xs sm:text-sm text-neutral-900 dark:text-white font-mono font-semibold break-all">{companyInfo.gstin}</p>
+                            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-neutral-200">
+                                <div className="bg-neutral-50 p-3 rounded-lg">
+                                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">GSTIN</p>
+                                    <p className="text-xs sm:text-sm text-neutral-900 font-mono font-semibold break-all">{companyInfo.gstin}</p>
                                 </div>
-                                <div className="bg-neutral-50 dark:bg-neutral-900/50 p-3 rounded-lg">
-                                    <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">State</p>
-                                    <p className="text-xs sm:text-sm text-neutral-900 dark:text-white font-semibold">{companyInfo.state}</p>
+                                <div className="bg-neutral-50 p-3 rounded-lg">
+                                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">State</p>
+                                    <p className="text-xs sm:text-sm text-neutral-900 font-semibold">{companyInfo.state}</p>
                                 </div>
                             </div>
                         </div>
@@ -228,14 +228,14 @@ export default function AboutSection() {
                             {milestones.map((milestone, index) => (
                                 <div 
                                     key={index}
-                                    className="relative bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-50 dark:from-emerald-950/50 dark:via-teal-950/50 dark:to-emerald-950/50 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border-2 border-emerald-200 dark:border-emerald-800/50 text-center group hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 overflow-hidden"
+                                    className="relative bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-50 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border-2 border-emerald-200 text-center group hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 overflow-hidden"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     <div className="relative z-10">
                                         <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent mb-1 sm:mb-2">
                                             {milestone.value}
                                         </div>
-                                        <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 font-semibold">
+                                        <p className="text-xs sm:text-sm text-neutral-700 font-semibold">
                                             {milestone.label}
                                         </p>
                                     </div>
@@ -244,11 +244,11 @@ export default function AboutSection() {
                         </div>
 
                         {/* Core Values Feature Cards */}
-                        <div className="bg-white dark:bg-neutral-800 rounded-2xl sm:rounded-3xl border-2 border-emerald-200 dark:border-emerald-800/50 overflow-hidden shadow-2xl shadow-emerald-500/10">
+                        <div className="bg-white rounded-2xl sm:rounded-3xl border-2 border-emerald-200 overflow-hidden shadow-2xl shadow-emerald-500/10">
                             <div className="bg-gradient-to-r from-emerald-500 to-teal-600 px-4 sm:px-6 py-3 sm:py-4">
                                 <h4 className="text-base sm:text-lg font-bold text-white text-center">Our Core Values</h4>
                             </div>
-                            <div className="divide-y divide-emerald-100 dark:divide-emerald-900/50">
+                            <div className="divide-y divide-emerald-100">
                                 {features.map((feature, index) => (
                                     <AboutFeatureCard
                                         key={index}
@@ -275,17 +275,17 @@ export default function AboutSection() {
                         {productCategories.map((category, index) => (
                             <div 
                                 key={index}
-                                className="group relative bg-white dark:bg-neutral-800 p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-neutral-200 dark:border-neutral-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
+                                className="group relative bg-white p-5 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-neutral-200 hover:border-emerald-500 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/5 transition-all duration-300 rounded-xl sm:rounded-2xl" />
                                 <div className="relative z-10">
-                                    <div className="p-2.5 sm:p-3 lg:p-4 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 rounded-lg sm:rounded-xl lg:rounded-2xl w-fit mb-3 sm:mb-4 lg:mb-6 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-lg">
+                                    <div className="p-2.5 sm:p-3 lg:p-4 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-lg sm:rounded-xl lg:rounded-2xl w-fit mb-3 sm:mb-4 lg:mb-6 text-emerald-600 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-lg">
                                         {category.icon}
                                     </div>
-                                    <h4 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-neutral-900 dark:text-white mb-1.5 sm:mb-2 lg:mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    <h4 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-neutral-900 mb-1.5 sm:mb-2 lg:mb-3 group-hover:text-emerald-600 transition-colors">
                                         {category.title}
                                     </h4>
-                                    <p className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                    <p className="text-xs sm:text-sm lg:text-base text-neutral-600 leading-relaxed">
                                         {category.description}
                                     </p>
                                 </div>
