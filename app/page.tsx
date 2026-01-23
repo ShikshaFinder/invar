@@ -62,6 +62,36 @@ const FeatureCard = ({
 export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
+      {/* Navigation - Modern Glassmorphic (logo, About, Contact Us) */}
+      <nav className="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-neutral-200/50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
+            <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+              <Image
+                src="/Black Invar Logo Png.png"
+                alt="Invar Logo"
+                width={120}
+                height={40}
+                className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
+              />
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-2">
+                <a href="#products" className="relative hover:text-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-emerald-50">Products</a>
+                <a href="#about" className="relative hover:text-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-emerald-50">About</a>
+                <a href="#contact" className="relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 text-white hover:from-emerald-700 hover:to-emerald-600 px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 hover:scale-105 flex items-center gap-2">Contact Us</a>
+              </div>
+            </div>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-2">
+              <a href="#products" className="text-sm font-medium text-neutral-700 hover:text-emerald-600 transition-colors">Products</a>
+              <a href="#about" className="text-sm font-medium text-neutral-700 hover:text-emerald-600 transition-colors">About</a>
+              <a href="#contact" className="text-sm font-medium px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full hover:from-emerald-700 hover:to-emerald-600 transition-all">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section - Antigravity Nutrition (very top) */}
       <HeroSection
         badge={{

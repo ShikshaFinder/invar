@@ -65,25 +65,67 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <div className="text-center">
                     <h1 className="text-2xl font-bold mb-4 text-neutral-900">Product Not Found</h1>
                     <Link href="/" className="text-emerald-600 hover:underline">
-                        Return Home
-                    </Link>
-                </div>
-            </div>
-        );
-    }
-
-    const relatedIngredients = findRelatedIngredient(product.title);
-    const relatedUseCase = findRelatedUseCase(product.title);
-
-    // WhatsApp enquiry URL - replace with your actual phone number
-    const whatsappNumber = "917096273336"; // Replace with actual WhatsApp number
-    const whatsappMessage = encodeURIComponent(`Hi, I'm interested in ${product.title}. Please provide more information.`);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
+                        return (
+                            <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
+                                <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
 
     return (
         <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
-            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
+            {/* Navigation - Modern Glassmorphic (copied from homepage) */}
+            <nav className="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-neutral-200/50">
+                <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+                    <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
+                        <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+                            <Image
+                                src="/Black Invar Logo Png.png"
+                                alt="Invar Logo"
+                                width={120}
+                                height={40}
+                                className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
+                            />
+                        </div>
+                        <div className="hidden md:block">
+                            <div className="ml-10 flex items-baseline space-x-2">
+                                <a href="/#products" className="relative hover:text-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-emerald-50">Products</a>
+                                <div className="relative group">
+                                    <a href="/#about" className="relative hover:text-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-emerald-50 flex items-center gap-1">
+                                        About
+                                        <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div className="relative group">
+                                    <a href="/#contact" className="relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 text-white hover:from-emerald-700 hover:to-emerald-600 px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 hover:scale-105 flex items-center gap-2">
+                                        Contact Us
+                                        <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Mobile Menu Button */}
+                        <div className="md:hidden flex items-center gap-2">
+                            <a href="/#products" className="text-sm font-medium text-neutral-700 hover:text-emerald-600 transition-colors">Products</a>
+                            <a href="/#contact" className="text-sm font-medium px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-full hover:from-emerald-700 hover:to-emerald-600 transition-all">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 pt-24">
+                {/* Breadcrumb Navigation */}
+                <nav className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-neutral-500 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap pb-2">
+                    <Link href="/" className="hover:text-emerald-600 transition-colors flex-shrink-0">Home</Link>
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <Link href="/#products" className="hover:text-emerald-600 transition-colors flex-shrink-0">Products</Link>
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7-7" />
+                    </svg>
+                    <span className="text-neutral-900 font-medium truncate max-w-[150px] sm:max-w-[200px]">{product.title}</span>
+                </nav>
                 {/* Breadcrumb Navigation */}
                 <nav className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-neutral-500 mb-4 sm:mb-6 overflow-x-auto whitespace-nowrap pb-2">
                     <Link href="/" className="hover:text-emerald-600 transition-colors flex-shrink-0">Home</Link>
