@@ -79,7 +79,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     }
 
     return (
-        <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
+        <div className="min-h-screen bg-white text-gray-900 font-sans">
             {/* Navigation - Modern Glassmorphic (copied from homepage) */}
             <nav className="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-neutral-200/50">
                 <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
@@ -406,25 +406,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                 <Link 
                                     key={rpIndex}
                                     href={`/products/${originalIndex}`}
-                                    className="group bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-neutral-200 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
+                                    className="group bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-gray-200 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
                                 >
                                     {relatedProduct.image && (
-                                        <div className="relative w-full h-24 sm:h-40 mb-2 sm:mb-4 overflow-hidden rounded-lg sm:rounded-xl bg-neutral-100">
+                                        <div className="relative w-full h-24 sm:h-40 mb-2 sm:mb-4 overflow-hidden rounded-lg sm:rounded-xl bg-white">
                                             <Image
                                                 src={relatedProduct.image}
                                                 alt={relatedProduct.title}
                                                 fill
-                                                className="object-contain p-1 sm:p-2 group-hover:scale-110 transition-transform duration-500"
+                                                className="object-contain p-1 sm:p-2 group-hover:scale-110 transition-transform duration-500 bg-white"
                                             />
                                         </div>
                                     )}
                                     <span className="inline-flex items-center rounded-full px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-xs font-bold tracking-wider text-emerald-600 uppercase bg-emerald-50 mb-1 sm:mb-2">
                                         {relatedProduct.family}
                                     </span>
-                                    <h4 className="text-sm sm:text-lg font-bold text-neutral-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                                    <h4 className="text-sm sm:text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
                                         {relatedProduct.title}
                                     </h4>
-                                    <p className="text-xs sm:text-sm text-neutral-600 mt-1 sm:mt-2 line-clamp-2 hidden sm:block">
+                                    <p className="text-xs sm:text-sm text-gray-700 mt-1 sm:mt-2 line-clamp-2 hidden sm:block">
                                         {relatedProduct.description}
                                     </p>
                                 </Link>
