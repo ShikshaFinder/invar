@@ -211,7 +211,7 @@ export default function Home() {
               <Link 
                 key={index}
                 href={`/products/${index}`}
-                className="group relative product-card-light bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-neutral-200/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
+                className="group relative product-card-always-light rounded-2xl sm:rounded-3xl lg:rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-neutral-200/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] pointer-events-none" />
@@ -404,7 +404,7 @@ export default function Home() {
       </section>
 
       {/* Medical Benefits Section - Modern Grid with Images */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-32 medical-benefits-always-light relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent dark:from-blue-950/20 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -425,7 +425,7 @@ export default function Home() {
               <a 
                 href={`/benefits/${index}`} 
                 key={index} 
-                className="group relative bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] overflow-hidden border border-neutral-200 dark:border-neutral-800 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
+                className="group relative ingredient-card-always-light rounded-2xl sm:rounded-3xl lg:rounded-[2rem] overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
               >
                 {/* Image Section */}
                 {ingredient.image ? (

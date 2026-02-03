@@ -1,3 +1,30 @@
+/* Force light theme for product cards (above images) */
+.product-card-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.product-card-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
+/* Force light theme for ingredient cards */
+.ingredient-card-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.ingredient-card-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
+/* Force light theme for Medical Benefits section */
+.medical-benefits-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.medical-benefits-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
 /* Force light theme for the entire Nutrition Information section */
 .nutrition-section-always-light {
   background: #fff !important;
