@@ -509,9 +509,13 @@ export default function Home() {
                     <h3 className="text-base sm:text-lg lg:text-2xl font-bold text-neutral-900 dark:text-white mb-2 sm:mb-3 lg:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                      {useCase.description}
-                    </p>
+                    {useCase.title === 'SALLYPRO C CARDIAC FORMULA' ? (
+                      <p className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        {useCase.description}
+                      </p>
+                    ) : (
+                      <div className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: useCase.description }} />
+                    )}
                   </div>
                 </div>
                 
