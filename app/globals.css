@@ -1,3 +1,59 @@
+/* Ensure the right info section is always light */
+.product-info-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.product-info-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
+/* Ensure only the left image section is always light */
+.product-image-always-light {
+  background: #fff !important;
+  color: #222 !important;
+  border-radius: 2rem 0 0 2rem;
+}
+.product-image-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
+
+/* Force light theme for product image section in details grid */
+.product-image-always-light {
+  background: #fff !important;
+  color: #222 !important;
+  border-radius: 2rem 0 0 2rem;
+}
+.product-image-always-light > * {
+  color: inherit;
+}
+/* Force light theme for product cards grid and cards */
+.product-cards-light-theme {
+  background: #fff !important;
+  color: #222 !important;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+.product-cards-light-theme * {
+  color: #222 !important;
+}
+.product-card-light {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #e5e7eb !important;
+}
+.product-card-light * {
+  color: #222 !important;
+}
+/* Always light theme for product image section */
+.product-image-section {
+  background: #fff !important;
+  color: #222 !important;
+  border-radius: 16px;
+}
+.product-image-section * {
+  color: #222 !important;
+}
 @import "tailwindcss";
 
 :root {

@@ -152,7 +152,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 <div id="product-details" className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-8 sm:mb-12 scroll-mt-24">
                     {/* Left Side - Product Image */}
                     <div className="lg:sticky lg:top-24 lg:self-start">
-                        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-neutral-200 shadow-xl">
+                        <div className="product-image-section bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-neutral-200 shadow-xl">
                             {product.image && (
                                 <div className="relative w-full aspect-square max-h-[300px] sm:max-h-[400px] lg:max-h-none overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50">
                                     <Image

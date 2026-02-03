@@ -188,6 +188,8 @@ export default function Home() {
 
       {/* Products Section - Modern Card Grid with Hover Effects */}
       <section id="products" className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
+        {/* Force light theme for product cards grid */}
+        <div className="product-cards-light-theme">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-teal-50/30 dark:from-emerald-950/20 dark:via-transparent dark:to-teal-950/20 pointer-events-none" />
         
@@ -209,7 +211,7 @@ export default function Home() {
               <Link 
                 key={index}
                 href={`/products/${index}`}
-                className="group relative bg-white dark:bg-neutral-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl lg:rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-neutral-200/50 dark:border-neutral-700/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
+                className="group relative product-card-light bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-neutral-200/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] pointer-events-none" />
@@ -255,10 +257,11 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* Product Details & Downloads Section - Modern Cards */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-950 dark:to-neutral-900 relative">
+      <section className="py-12 sm:py-20 lg:py-32 bg-white relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-100/20 via-transparent to-transparent dark:from-emerald-900/10 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
@@ -286,7 +289,7 @@ export default function Home() {
                 {/* Content Container */}
                 <div className="relative flex flex-col lg:flex-row">
                   {/* Left Section - Product Badge & Image */}
-                  <div className="lg:w-1/3 p-6 sm:p-8 lg:p-10 flex flex-col items-center justify-center bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-emerald-950/20 dark:to-teal-950/20 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-800">
+                  <div className="lg:w-1/3 p-6 sm:p-8 lg:p-10 flex flex-col items-center justify-center product-image-always-light border-b lg:border-b-0 lg:border-r border-neutral-200">
                     <span className="inline-flex items-center rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-100 dark:bg-emerald-900/50 mb-4 ring-2 ring-emerald-500/20">
                       {product.family}
                     </span>
@@ -303,7 +306,7 @@ export default function Home() {
                   </div>
 
                   {/* Right Section - Product Info */}
-                  <div className="lg:w-2/3 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                  <div className="lg:w-2/3 p-6 sm:p-8 lg:p-10 flex flex-col justify-between product-info-always-light" style={{background: '#fff', color: '#222'}}>
                     <div>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900 dark:text-white mb-3 sm:mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                         {product.title}
