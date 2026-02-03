@@ -198,7 +198,7 @@ export default function Home() {
             <span className="inline-flex items-center rounded-full px-3 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2 text-xs sm:text-sm lg:text-base font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 ring-1 ring-inset ring-emerald-600/20">
               Our Products
             </span>
-            <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight text-transparent">
+            <h2 className="relative z-10 inline-block text-black text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
               Product Family Overview
             </h2>
             <p className="max-w-[700px] text-sm sm:text-base lg:text-xl text-neutral-600 dark:text-neutral-400 px-4">
@@ -266,10 +266,10 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-2 sm:gap-4 lg:gap-6 text-center mb-8 sm:mb-16 lg:mb-20">
-            <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-600/20">
+            <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 text-black ring-1 ring-inset ring-blue-600/20">
               Product Catalog
             </span>
-            <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="relative z-10 inline-block text-black text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
               Explore Our Range
             </h2>
             <p className="max-w-[700px] text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-neutral-400 px-4">
@@ -362,7 +362,7 @@ export default function Home() {
       </section>
 
       {/* Nutritional Information Section - Feature Cards with Hover */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-32 nutrition-section-always-light relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/50 to-transparent dark:from-emerald-950/20 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -370,7 +370,7 @@ export default function Home() {
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 ring-1 ring-inset ring-emerald-600/20">
               Nutrition Facts
             </span>
-            <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl">
+            <h2 className="relative z-10 inline-block text-black text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
               Nutritional Information
             </h2>
             <p className="max-w-[550px] text-lg text-neutral-600 dark:text-neutral-400">
@@ -378,7 +378,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 bg-white dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-emerald-500/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 nutrition-cards-always-light rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-emerald-500/5">
             {products.map((product, index) => {
               if (product.nutrition) {
                 return (

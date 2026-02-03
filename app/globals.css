@@ -1,3 +1,21 @@
+/* Force light theme for the entire Nutrition Information section */
+.nutrition-section-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.nutrition-section-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
+/* Force light theme for nutrition cards grid section */
+.nutrition-cards-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.nutrition-cards-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
 /* Ensure the right info section is always light */
 .product-info-always-light {
   background: #fff !important;
