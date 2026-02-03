@@ -1,3 +1,21 @@
+/* Force light theme for the entire use case section */
+.usecase-section-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.usecase-section-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
+/* Force light theme for use case cards */
+.usecase-card-always-light {
+  background: #fff !important;
+  color: #222 !important;
+}
+.usecase-card-always-light * {
+  color: #222 !important;
+  background: transparent !important;
+}
 /* Force light theme for product cards (above images) */
 .product-card-always-light {
   background: #fff !important;

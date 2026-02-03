@@ -469,7 +469,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section - Modern Feature Cards */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-32 usecase-section-always-light relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-transparent to-pink-50/30 dark:from-purple-950/20 dark:via-transparent dark:to-pink-950/20 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -489,7 +489,7 @@ export default function Home() {
             {useCases.map((useCase, index) => (
               <div 
                 key={index} 
-                className="group relative bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border border-neutral-200 dark:border-neutral-700 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 overflow-hidden"
+                className="group relative usecase-card-always-light p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border border-neutral-200 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 overflow-hidden"
               >
                 {/* Background pattern */}
                 <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
