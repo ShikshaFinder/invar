@@ -188,6 +188,8 @@ export default function Home() {
 
       {/* Products Section - Modern Card Grid with Hover Effects */}
       <section id="products" className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
+        {/* Force light theme for product cards grid */}
+        <div className="product-cards-light-theme">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-teal-50/30 dark:from-emerald-950/20 dark:via-transparent dark:to-teal-950/20 pointer-events-none" />
         
@@ -196,7 +198,7 @@ export default function Home() {
             <span className="inline-flex items-center rounded-full px-3 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2 text-xs sm:text-sm lg:text-base font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 ring-1 ring-inset ring-emerald-600/20">
               Our Products
             </span>
-            <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight text-transparent">
+            <h2 className="relative z-10 inline-block text-black text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
               Product Family Overview
             </h2>
             <p className="max-w-[700px] text-sm sm:text-base lg:text-xl text-neutral-600 dark:text-neutral-400 px-4">
@@ -209,7 +211,7 @@ export default function Home() {
               <Link 
                 key={index}
                 href={`/products/${index}`}
-                className="group relative bg-white dark:bg-neutral-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl lg:rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-neutral-200/50 dark:border-neutral-700/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
+                className="group relative product-card-always-light rounded-2xl sm:rounded-3xl lg:rounded-[2rem] p-4 sm:p-6 lg:p-8 border border-neutral-200/50 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2"
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] pointer-events-none" />
@@ -255,18 +257,19 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* Product Details & Downloads Section - Modern Cards */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-950 dark:to-neutral-900 relative">
+      <section className="py-12 sm:py-20 lg:py-32 bg-white relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-100/20 via-transparent to-transparent dark:from-emerald-900/10 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center gap-2 sm:gap-4 lg:gap-6 text-center mb-8 sm:mb-16 lg:mb-20">
-            <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-600/20">
+            <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-blue-100 text-black ring-1 ring-inset ring-blue-600/20">
               Product Catalog
             </span>
-            <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="relative z-10 inline-block text-black text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
               Explore Our Range
             </h2>
             <p className="max-w-[700px] text-base sm:text-lg lg:text-xl text-neutral-600 dark:text-neutral-400 px-4">
@@ -286,7 +289,7 @@ export default function Home() {
                 {/* Content Container */}
                 <div className="relative flex flex-col lg:flex-row">
                   {/* Left Section - Product Badge & Image */}
-                  <div className="lg:w-1/3 p-6 sm:p-8 lg:p-10 flex flex-col items-center justify-center bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-emerald-950/20 dark:to-teal-950/20 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-800">
+                  <div className="lg:w-1/3 p-6 sm:p-8 lg:p-10 flex flex-col items-center justify-center product-image-always-light border-b lg:border-b-0 lg:border-r border-neutral-200">
                     <span className="inline-flex items-center rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-100 dark:bg-emerald-900/50 mb-4 ring-2 ring-emerald-500/20">
                       {product.family}
                     </span>
@@ -303,7 +306,7 @@ export default function Home() {
                   </div>
 
                   {/* Right Section - Product Info */}
-                  <div className="lg:w-2/3 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                  <div className="lg:w-2/3 p-6 sm:p-8 lg:p-10 flex flex-col justify-between product-info-always-light" style={{background: '#fff', color: '#222'}}>
                     <div>
                       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900 dark:text-white mb-3 sm:mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                         {product.title}
@@ -359,7 +362,7 @@ export default function Home() {
       </section>
 
       {/* Nutritional Information Section - Feature Cards with Hover */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-32 nutrition-section-always-light relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/50 to-transparent dark:from-emerald-950/20 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -367,7 +370,7 @@ export default function Home() {
             <span className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 ring-1 ring-inset ring-emerald-600/20">
               Nutrition Facts
             </span>
-            <h2 className="relative z-10 inline-block bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-white bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl">
+            <h2 className="relative z-10 inline-block text-black text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
               Nutritional Information
             </h2>
             <p className="max-w-[550px] text-lg text-neutral-600 dark:text-neutral-400">
@@ -375,7 +378,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 bg-white dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden shadow-xl shadow-emerald-500/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 nutrition-cards-always-light rounded-3xl border border-neutral-200 overflow-hidden shadow-xl shadow-emerald-500/5">
             {products.map((product, index) => {
               if (product.nutrition) {
                 return (
@@ -401,7 +404,7 @@ export default function Home() {
       </section>
 
       {/* Medical Benefits Section - Modern Grid with Images */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-neutral-50 dark:bg-neutral-950 relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-32 medical-benefits-always-light relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent dark:from-blue-950/20 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -422,7 +425,7 @@ export default function Home() {
               <a 
                 href={`/benefits/${index}`} 
                 key={index} 
-                className="group relative bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] overflow-hidden border border-neutral-200 dark:border-neutral-800 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
+                className="group relative ingredient-card-always-light rounded-2xl sm:rounded-3xl lg:rounded-[2rem] overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
               >
                 {/* Image Section */}
                 {ingredient.image ? (
@@ -466,7 +469,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section - Modern Feature Cards */}
-      <section className="py-12 sm:py-20 lg:py-32 bg-white dark:bg-neutral-900 relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-32 usecase-section-always-light relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-transparent to-pink-50/30 dark:from-purple-950/20 dark:via-transparent dark:to-pink-950/20 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -486,7 +489,7 @@ export default function Home() {
             {useCases.map((useCase, index) => (
               <div 
                 key={index} 
-                className="group relative bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border border-neutral-200 dark:border-neutral-700 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 overflow-hidden"
+                className="group relative usecase-card-always-light p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] border border-neutral-200 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 overflow-hidden"
               >
                 {/* Background pattern */}
                 <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2" />
@@ -506,9 +509,13 @@ export default function Home() {
                     <h3 className="text-base sm:text-lg lg:text-2xl font-bold text-neutral-900 dark:text-white mb-2 sm:mb-3 lg:mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                      {useCase.description}
-                    </p>
+                    {useCase.title === 'SALLYPRO C CARDIAC FORMULA' ? (
+                      <p className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        {useCase.description}
+                      </p>
+                    ) : (
+                      <div className="text-xs sm:text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: useCase.description }} />
+                    )}
                   </div>
                 </div>
                 
