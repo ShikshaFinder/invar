@@ -120,8 +120,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f4ec;
+  --foreground: #22302b;
   --brand: 160 84% 39%;
   --brand-foreground: 160 84% 39%;
 }
@@ -138,13 +138,13 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
-  background: #fff !important;
+  background: #f7f4ec;
 }
 
 body {
-  background: #fff !important;
-  color: #171717;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f4ec;
+  color: #22302b;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -226,4 +226,21 @@ button, a {
 .fade-bottom {
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Editorial rich-text rendering for use-case descriptions */
+.usecase-prose p {
+  margin-bottom: 0.6rem;
+}
+.usecase-prose ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+.usecase-prose li {
+  margin-bottom: 0.25rem;
+}
+.usecase-prose strong {
+  color: #22302b;
+  font-weight: 600;
 }
