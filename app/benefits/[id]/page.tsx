@@ -1,73 +1,102 @@
-
 import { ingredients } from "../../data";
-import Link from 'next/link';
-import HeroSection from "../../components/HeroSection";
-import DocViewer from "../../components/DocViewer";
+import Link from "next/link";
+import Image from "next/image";
+import SiteHeader from "../../components/SiteHeader";
+import SiteFooter from "../../components/SiteFooter";
+
+const serif = { fontFamily: "var(--font-invar-serif), Georgia, serif" };
 
 export async function generateStaticParams() {
-    return ingredients.map((_, index) => ({
-        id: index.toString(),
-    }));
+  return ingredients.map((_, index) => ({ id: index.toString() }));
 }
 
-export default async function BenefitPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const index = parseInt(id);
-    const ingredient = ingredients[index];
+export default async function BenefitPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const index = parseInt(id);
+  const ingredient = ingredients[index];
 
-    if (!ingredient) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-neutral-50">
-                <div className="text-center">
-                    <h1 className="text-2xl font-bold mb-4">Ingredient Not Found</h1>
-                    <Link href="/" className="text-emerald-600 hover:underline">
-                        Return Home
-                    </Link>
-                </div>
-            </div>
-        );
-    }
-
+  if (!ingredient) {
     return (
-        <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
-            <HeroSection
-                title={ingredient.name}
-                subtitle="Key Ingredient Medical Benefits"
-            />
-            <div className="max-w-4xl mx-auto p-8">
-                <Link href="/" className="inline-flex items-center text-sm font-medium text-emerald-600 mb-8 hover:underline">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    Back to Home
-                </Link>
-
-                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-neutral-200">
-                    <div className="p-8 md:p-12">
-                        {/* Header content removed as it is now in HeroSection */}
-
-                        <div className="prose max-w-none">
-                            <h3 className="text-xl font-bold mb-4">Medical Benefits & Highlights</h3>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
-                                {ingredient.highlights.map((highlight, i) => (
-                                    <li key={i} className="flex items-start bg-neutral-50 p-4 rounded-xl">
-                                        <svg className="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        <span className="text-neutral-700 font-medium">
-                                            {highlight}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* View Detailed Document Button removed as per requirements */}
-
-
-                    </div>
-                </div>
-            </div>
+      <div className="min-h-screen bg-[color:var(--bg)]">
+        <SiteHeader />
+        <div className="mx-auto max-w-3xl px-6 py-32 text-center">
+          <h1 className="text-[32px] text-[color:var(--ink)]" style={serif}>
+            Ingredient not found
+          </h1>
+          <Link
+            href="/"
+            className="mt-6 inline-block rounded-full bg-[color:var(--sage)] px-6 py-3 text-[13px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
+          >
+            Return home
+          </Link>
         </div>
+        <SiteFooter />
+      </div>
     );
+  }
+
+  return (
+    <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
+      <SiteHeader />
+
+      <section className="mx-auto max-w-5xl px-6 pb-16 pt-12 md:pb-24 md:pt-16">
+        <Link
+          href="/#ingredients"
+          className="text-[13px] font-medium uppercase tracking-[0.12em] text-[color:var(--nav-ink)] hover:underline"
+        >
+          ← All ingredients
+        </Link>
+        <div className="mt-8 flex flex-col items-start gap-8 md:flex-row md:items-center">
+          {ingredient.image && (
+            <Image
+              src={ingredient.image}
+              alt={ingredient.name}
+              width={160}
+              height={160}
+              priority
+              className="h-32 w-32 rounded-full object-cover md:h-40 md:w-40"
+            />
+          )}
+          <div>
+            <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--text)]/80">
+              Key ingredient
+            </p>
+            <h1
+              className="mt-3 text-[34px] leading-tight tracking-tight text-[color:var(--ink)] md:text-[44px]"
+              style={serif}
+            >
+              {ingredient.name}
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[color:var(--stone)]">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <h2
+            className="text-[26px] tracking-tight text-[color:var(--ink)] md:text-[30px]"
+            style={serif}
+          >
+            Medical benefits and highlights
+          </h2>
+          <ol className="mt-10 grid gap-x-12 gap-y-6 md:grid-cols-2">
+            {ingredient.highlights.map((highlight, i) => (
+              <li key={highlight} className="flex gap-4 border-b border-[color:var(--ink)]/10 pb-5">
+                <span className="text-[14px] font-medium text-[color:var(--nav-ink)]" style={serif}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-[15px] leading-relaxed">{highlight}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </div>
+  );
 }

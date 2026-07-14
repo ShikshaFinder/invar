@@ -1,56 +1,86 @@
-
 import { useCases } from "../../data";
-import Link from 'next/link';
-import HeroSection from "../../components/HeroSection";
+import Link from "next/link";
+import SiteHeader from "../../components/SiteHeader";
+import SiteFooter from "../../components/SiteFooter";
+
+const serif = { fontFamily: "var(--font-invar-serif), Georgia, serif" };
 
 export async function generateStaticParams() {
-    return useCases.map((_, index) => ({
-        id: index.toString(),
-    }));
+  return useCases.map((_, index) => ({ id: index.toString() }));
 }
 
-export default async function UseCasePage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const index = parseInt(id);
-    const useCase = useCases[index];
+export default async function UseCasePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const index = parseInt(id);
+  const useCase = useCases[index];
 
-    if (!useCase) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-neutral-50">
-                <div className="text-center">
-                    <h1 className="text-2xl font-bold mb-4">Use Case Not Found</h1>
-                    <Link href="/" className="text-emerald-600 hover:underline">
-                        Return Home
-                    </Link>
-                </div>
-            </div>
-        );
-    }
-
+  if (!useCase) {
     return (
-        <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
-            <HeroSection
-                title={useCase.title}
-                subtitle="Use Case Details"
-            />
-            <div className="max-w-4xl mx-auto p-8">
-                <Link href="/" className="inline-flex items-center text-sm font-medium text-emerald-600 mb-8 hover:underline">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    Back to Home
-                </Link>
-
-                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-neutral-200">
-                    <div className="p-8 md:p-12">
-                        {/* Header content removed as it is now in HeroSection */}
-
-                        <div className="prose max-w-none text-lg text-neutral-600">
-                            <p>{useCase.description}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div className="min-h-screen bg-[color:var(--bg)]">
+        <SiteHeader />
+        <div className="mx-auto max-w-3xl px-6 py-32 text-center">
+          <h1 className="text-[32px] text-[color:var(--ink)]" style={serif}>
+            Use case not found
+          </h1>
+          <Link
+            href="/"
+            className="mt-6 inline-block rounded-full bg-[color:var(--sage)] px-6 py-3 text-[13px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
+          >
+            Return home
+          </Link>
         </div>
+        <SiteFooter />
+      </div>
     );
+  }
+
+  const isPlainText = useCase.title === "SALLYPRO C CARDIAC FORMULA";
+
+  return (
+    <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
+      <SiteHeader />
+
+      <section className="mx-auto max-w-3xl px-6 pb-16 pt-12 md:pb-24 md:pt-16">
+        <Link
+          href="/"
+          className="text-[13px] font-medium uppercase tracking-[0.12em] text-[color:var(--nav-ink)] hover:underline"
+        >
+          ← Home
+        </Link>
+        <p className="mt-8 text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--text)]/80">
+          Use case {String(index + 1).padStart(2, "0")}
+        </p>
+        <h1
+          className="mt-3 text-[34px] leading-tight tracking-tight text-[color:var(--ink)] md:text-[42px]"
+          style={serif}
+        >
+          {useCase.title}
+        </h1>
+
+        <div className="mt-10 rounded-3xl bg-[color:var(--stone)] p-8 md:p-12">
+          {isPlainText ? (
+            <p className="text-[16px] leading-relaxed">{useCase.description}</p>
+          ) : (
+            <div
+              className="invar-prose text-[16px] leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: useCase.description }}
+            />
+          )}
+        </div>
+
+        <Link
+          href="/#contact"
+          className="mt-10 inline-block rounded-full bg-[color:var(--sage)] px-7 py-3.5 text-[14px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
+        >
+          Ask us about this product
+        </Link>
+      </section>
+
+      <SiteFooter />
+    </div>
+  );
 }
