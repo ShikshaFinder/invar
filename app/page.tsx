@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="relative mx-auto flex aspect-square w-full max-w-[420px] items-center justify-center rounded-full bg-[color:var(--mist)]">
             <Image
-              src="/01.png"
+              src="/hero-img.png"
               alt="SALLYPRO Protein Powder by Invar Pharmaceutical"
               width={340}
               height={340}
