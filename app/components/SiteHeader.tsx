@@ -11,22 +11,22 @@ export default function SiteHeader() {
           <Image
             src="/Black Invar Logo Png.png"
             alt="Invar Pharmaceutical"
-            width={44}
-            height={44}
-            className="h-10 w-10 object-contain"
+            width={56}
+            height={56}
+            className="h-12 w-12 object-contain md:h-14 md:w-14"
           />
           <span
             className="text-[17px] font-semibold tracking-tight text-[color:var(--ink)]"
             style={serif}
           >
-            Invar Pharmaceutical
+            Invar Pharmaceutical Pvt Ltd
           </span>
         </Link>
         <div className="hidden items-center gap-8 text-[13px] uppercase tracking-[0.08em] text-[color:var(--nav-ink)] md:flex">
+          <Link href="/#about" className="transition-opacity hover:opacity-70">About</Link>
           <Link href="/#products" className="transition-opacity hover:opacity-70">Products</Link>
           <Link href="/#segments" className="transition-opacity hover:opacity-70">Focus Areas</Link>
           <Link href="/#ingredients" className="transition-opacity hover:opacity-70">Ingredients</Link>
-          <Link href="/#about" className="transition-opacity hover:opacity-70">About</Link>
         </div>
         <Link
           href="/#contact"
