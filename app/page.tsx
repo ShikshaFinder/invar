@@ -44,25 +44,31 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
-        <div className="grid items-center gap-14 md:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <SectionLabel>Therapeutic nutrition, made in India</SectionLabel>
+      <section className="overflow-hidden bg-[color:var(--bg)]">
+        <div className="mx-auto grid min-h-[720px] w-full max-w-[1416px] items-center gap-14 px-6 py-20 sm:px-10 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:py-24 xl:px-0">
+          <div className="max-w-[780px]">
+            <p className="text-[12px] font-medium uppercase tracking-[0.26em] text-[#405b67]">
+              Therapeutic nutrition, made in India
+            </p>
             <h1
-              className="mt-5 text-[42px] leading-[1.08] tracking-tight text-[color:var(--ink)] md:text-[58px]"
+              className="mt-6 max-w-[780px] text-[3.2rem] leading-[1.02] tracking-[-0.035em] text-[color:var(--ink)] sm:text-[4.2rem] md:text-[4.65rem]"
               style={serif}
             >
-              Innovating nutritional support for specialized health.
+              Innovating
+              <br />
+              nutritional support
+              <br />
+              for specialized health.
             </h1>
-            <p className="mt-6 max-w-[58ch] text-[17px] leading-relaxed">
+            <p className="mt-8 max-w-[740px] text-[16px] leading-[1.55] md:text-[18px]">
               Invar Pharmaceutical develops high-quality, science-based nutritional
               products for people with specific medical conditions: from cardiac care
               and diabetic management to pregnancy and maternal health.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
               <a
                 href="#products"
-                className="rounded-full bg-[color:var(--sage)] px-7 py-3.5 text-[14px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
+                className="rounded-full bg-[color:var(--sage)] px-8 py-4 text-[14px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
               >
                 Explore products
               </a>
@@ -78,28 +84,37 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div className="relative mx-auto flex aspect-square w-full max-w-[420px] items-center justify-center rounded-full bg-[color:var(--mist)]">
-            <Image
-              src="/hero-img.png"
-              alt="SALLYPRO Protein Powder by Invar Pharmaceutical"
-              width={340}
-              height={340}
-              priority
-              className="w-[72%] object-contain drop-shadow-xl"
+          <div className="relative flex min-h-[360px] items-center justify-center md:min-h-[500px] md:justify-end">
+            <div
+              aria-hidden
+              className="absolute right-[3%] top-[3%] aspect-square w-[86%] max-w-[510px] rounded-full bg-[color:var(--mist)]"
             />
-            <p
-              className="absolute bottom-8 right-2 rotate-[-4deg] text-[15px] italic text-[color:var(--ink)]/70 md:right-6"
-              style={serif}
-            >
-              formulated for real conditions
-            </p>
+            <div className="relative z-10 w-[86%] max-w-[500px] -translate-x-[2%] translate-y-[-3%] sm:w-[76%] md:translate-x-[-1%]">
+              <div className="overflow-hidden shadow-[0_22px_40px_rgba(34,48,43,0.18)]">
+                <Image
+                  src="/hero-img.png"
+                  alt="Invar Pharmaceutical supplement bottle and capsules arranged with botanical ingredients"
+                  width={1536}
+                  height={1024}
+                  priority
+                  className="aspect-[4/3] h-auto w-full object-cover"
+                  sizes="(max-width: 767px) 76vw, 38vw"
+                />
+              </div>
+              <p
+                className="mt-6 text-right text-lg italic text-[#405b67] md:mr-[-4%]"
+                style={serif}
+              >
+                formulated for real conditions
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Segment strip */}
       <div className="border-y border-[color:var(--ink)]/10 bg-[color:var(--stone)]">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-2 px-6 py-4 text-[13px] font-medium uppercase tracking-[0.16em] text-[color:var(--nav-ink)]">
+        <div className="mx-auto flex max-w-[1416px] flex-wrap items-center justify-center gap-x-10 gap-y-2 px-6 py-6 text-[12px] font-medium uppercase tracking-[0.2em] text-[color:var(--nav-ink)] sm:px-10 md:py-7 xl:px-0 md:text-[13px]">
           <span>Cardiac Care</span>
           <span aria-hidden>·</span>
           <span>Diabetic Management</span>
