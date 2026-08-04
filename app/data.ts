@@ -3,6 +3,10 @@ export interface Product {
     title: string;
     subtitle: string;
     description: string;
+    detailIntro?: string;
+    benefitAreas?: string[];
+    usageDetails?: string[];
+    qualityNotes?: string[];
     additional_description?: string; // Optional field for extra info box
     features?: string[];
     nutrition?: {
@@ -21,6 +25,10 @@ export interface Ingredient {
     name: string;
     sourceDoc: string;
     highlights: string[];
+    intro: string;
+    role: string;
+    focusAreas: string[];
+    formulationNotes: string[];
     image?: string;
 }
 
@@ -29,6 +37,14 @@ export const ingredients: Ingredient[] = [
         name: "ARJUNA (Terminalia arjuna)",
         sourceDoc: "/Benefits of Arjuna (Terminalia arjuna).docx",
         image: "/Arjuna.jpg",
+        intro: "Arjuna is a traditional botanical ingredient selected for formulas that keep cardiovascular wellness in view. Its profile brings together cardiotonic, circulation, antioxidant, and inflammation-related areas for a more complete ingredient story.",
+        role: "Heart-focused botanical for cardiovascular and circulation-oriented nutrition.",
+        focusAreas: ["Cardiovascular wellness", "Circulation support", "Antioxidant balance"],
+        formulationNotes: [
+            "Supports a heart-health narrative alongside beetroot and omega-3.",
+            "Provides a botanical complement to daily nutritional support.",
+            "Best understood within a balanced diet and professional care plan."
+        ],
         highlights: [
             "Cardiotonic effects", "Anti-hypertensive", "Anti-inflammatory", "Antioxidant",
             "Arrhythmia prevention", "Cholesterol-lowering", "Improved coronary blood flow",
@@ -40,6 +56,14 @@ export const ingredients: Ingredient[] = [
         name: "BEETROOT (Beta vulgaris)",
         sourceDoc: "/Benefits of Beetroot (Beta vulgaris).docx",
         image: "/beetroot.jpg",
+        intro: "Beetroot is a naturally nitrate-rich root used in nutrition formulations focused on circulation, exercise performance, and antioxidant support. It adds a recognizable, food-based ingredient story to the formula.",
+        role: "Plant-based source for circulation, performance, and antioxidant support.",
+        focusAreas: ["Nitric oxide pathway", "Exercise performance", "Antioxidant and digestive support"],
+        formulationNotes: [
+            "Pairs naturally with cardiovascular-focused nutrition.",
+            "A food-derived ingredient that is easy to understand and communicate.",
+            "A complementary ingredient, not a replacement for prescribed care."
+        ],
         highlights: [
             "Blood pressure regulation", "Improved exercise performance", "Nitric oxide production",
             "Antioxidant properties", "Anti-inflammatory benefits", "Digestive support",
@@ -51,6 +75,14 @@ export const ingredients: Ingredient[] = [
         name: "GARCINIA CAMBOGIA",
         sourceDoc: "/Garcinia Cambogia Extract.docx",
         image: "/garcinia.jpg",
+        intro: "Garcinia cambogia is included in the metabolic-support conversation for its HCA content and its links to appetite and lipid metabolism. Its role is one part of a broader, balanced approach to healthy weight management.",
+        role: "Metabolic-support botanical used in weight-management formulations.",
+        focusAreas: ["Appetite and satiety", "Lipid metabolism", "Metabolic wellness"],
+        formulationNotes: [
+            "Works alongside fiber, protein, and lifestyle support in SALLYPRO D.",
+            "Keeps the formula story broader than a single extract.",
+            "Use only as directed, especially when taking medicines or managing a condition."
+        ],
         highlights: [
             "Hydroxycitric Acid (HCA) supports appetite suppression",
             "Fat metabolism", "Reduction of LDL and triglycerides",
@@ -62,6 +94,14 @@ export const ingredients: Ingredient[] = [
         name: "OMEGA 3 (EPA/DHA)",
         sourceDoc: "/Omega 3.docx",
         image: "/omega.jpg",
+        intro: "EPA and DHA are long-chain omega-3 fatty acids used across heart, brain, eye, and maternal nutrition conversations. Their role connects cardiovascular support with broader whole-life nutrition.",
+        role: "Essential fatty-acid pair for heart, brain, eye, and maternal nutrition.",
+        focusAreas: ["Heart and triglycerides", "Brain and mood", "Eye and maternal nutrition"],
+        formulationNotes: [
+            "Pairs with micronutrients in daily nutrition formulations.",
+            "Supports a broad nutrition story across different life stages.",
+            "Dietary use should follow product directions and medical guidance when relevant."
+        ],
         highlights: [
             "Heart protection", "Triglyceride reduction", "Anti-arrhythmic effects",
             "Anti-inflammatory", "Improved brain function", "Mood stabilization",
@@ -72,6 +112,14 @@ export const ingredients: Ingredient[] = [
         name: "VITAMINS, MINERALS, ZINC, DHA",
         sourceDoc: "/Vitamins, Minerals, Zinc, and DHA.docx",
         image: "/minrals.jpg",
+        intro: "Vitamins, minerals, zinc, and DHA form the micronutrient foundation of daily nutrition. Together they support the formula story across immunity, energy metabolism, bones, blood formation, healing, and cognitive development.",
+        role: "Broad micronutrient blend for daily nutrition and life-stage support.",
+        focusAreas: ["Immunity and healing", "Metabolism and energy", "Bones, brain, and vision"],
+        formulationNotes: [
+            "Brings multiple micronutrients into one convenient daily format.",
+            "Communicates both foundational and targeted nutrition in one blend.",
+            "Needs should be considered alongside diet, age, life stage, and professional advice."
+        ],
         highlights: [
             "Vitamin A for vision and immunity",
             "Vitamin B complex for metabolism and neurological health",
@@ -119,6 +167,14 @@ export const products: Product[] = [
         title: "SORE THROAT & COUGH RELIEF SPRAY",
         subtitle: "30 ml - Anise Flavour",
         description: "Spray formulation intended for throat discomfort relief, coughing, and soreness.",
+        detailIntro: "A compact herbal spray designed for everyday throat comfort, with a focused blend of ginger, tulsi, honey, curcumin, and piperin in an easy-to-use format.",
+        benefitAreas: ["Throat comfort", "Cough and soreness relief", "Convenient on-the-go format"],
+        usageDetails: [
+            "Spray directly into the throat as needed or as directed by a healthcare professional.",
+            "Keep the compact spray format close for travel, work, or daily routines.",
+            "Read the label and follow the recommended serving instructions."
+        ],
+        qualityNotes: ["30 ml spray format", "Anise flavour", "Gluten free and sugar free"],
         additional_description: `<p><strong>Why choose SORE THROAT & COUGH RELIEF SPRAY?</strong></p>\n<ul>\n<li>Provides fast relief from throat discomfort and cough.</li>\n<li>Contains natural ingredients: Ginger, Tulsi, Honey, Curcumin, Piperin.</li>\n<li>Gluten Free and Sugar Free for safe daily use.</li>\n<li>Easy-to-use spray format for on-the-go relief.</li>\n</ul>\n<p><strong>Usage:</strong> Spray directly into the throat as needed, or as directed by your healthcare professional.</p>`,
         image: "/Throatwal Spray.png",
         features: [
@@ -135,8 +191,16 @@ export const products: Product[] = [
         title: "SALLYPRO PROTEIN POWDER (Mango)",
         subtitle: "200 gm - Mango Flavour",
         description: "Protein Powder Enriched With Vitamin, Minerals & Zinc & DHA. A daily nutrition supplement.",
+        detailIntro: "A mango-flavoured daily nutrition supplement that brings protein, essential micronutrients, zinc, and DHA together in one convenient serving.",
+        benefitAreas: ["Daily protein nutrition", "Vitamin and mineral support", "DHA-supported brain nutrition"],
+        usageDetails: [
+            "Mix 1–2 scoops with milk or water, stir well, and consume daily.",
+            "Use as part of a balanced diet and an active, age-appropriate routine.",
+            "Follow the product label or the serving guidance provided by your healthcare professional."
+        ],
+        qualityNotes: ["200 g pack", "Mango flavour", "Enriched with vitamins, minerals, zinc, and DHA"],
         additional_description: `<p><strong>Why choose SALLYPRO Protein Powder (Mango)?</strong></p>\n<ul>\n<li>Delicious mango flavor for enjoyable daily nutrition.</li>\n<li>Supports muscle recovery and growth with high-quality protein.</li>\n<li>Enriched with essential vitamins and minerals for immunity and vitality.</li>\n<li>Contains DHA for brain health.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
-        image: "/01.png",
+        image: "/sallypro.jpeg",
         features: [
             "Enriched with Vitamins, Minerals & Zinc",
             "Contains: Calcium, Vitamin D3, Magnesium",
@@ -207,6 +271,14 @@ export const products: Product[] = [
         title: "SALLYPRO PROTEIN POWDER (Chocolate)",
         subtitle: "200 gm - Chocolate Flavour",
         description: "Protein Powder Enriched With Vitamin, Minerals & Zinc & DHA. A daily nutrition supplement.",
+        detailIntro: "A chocolate-flavoured daily nutrition supplement formulated to make protein and micronutrient support easy to add to a regular routine.",
+        benefitAreas: ["Daily protein nutrition", "Micronutrient coverage", "DHA-supported brain nutrition"],
+        usageDetails: [
+            "Mix 1–2 scoops with milk or water, stir well, and consume daily.",
+            "Use as part of a balanced diet rather than as a substitute for varied meals.",
+            "Follow the product label or the serving guidance provided by your healthcare professional."
+        ],
+        qualityNotes: ["200 g pack", "Chocolate flavour", "Enriched with vitamins, minerals, zinc, and DHA"],
         additional_description: `<p><strong>Why choose SALLYPRO Protein Powder (Chocolate)?</strong></p>\n<ul>\n<li>Formulated for daily nutrition and overall wellness.</li>\n<li>Supports muscle recovery and growth with high-quality protein.</li>\n<li>Enriched with essential vitamins and minerals for immunity and vitality.</li>\n<li>Delicious chocolate flavor makes it enjoyable for all ages.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
         image: "/03.png",
         features: [
@@ -279,6 +351,14 @@ export const products: Product[] = [
         title: "SALLYPRO D DIABESITY POWDER",
         subtitle: "200 gm - Vanilla Flavour",
         description: "Enriched with whey protein, Omega 3, fibers, CLA, Garcinia Cambogia Extract, micronutrients, antioxidants, and vitamins.",
+        detailIntro: "A vanilla-flavoured formula combining whey protein, fiber, omega-3, CLA, Garcinia cambogia extract, micronutrients, antioxidants, and vitamins for a broader metabolic-support nutrition story.",
+        benefitAreas: ["Metabolic-support nutrition", "Protein and fiber intake", "Omega-3 and micronutrient support"],
+        usageDetails: [
+            "Mix 1–2 scoops with water or milk, stir well, and consume daily.",
+            "Use alongside a balanced diet, regular movement, and an individualized wellness plan.",
+            "Follow the product label and seek professional guidance when managing a medical condition."
+        ],
+        qualityNotes: ["200 g pack", "Vanilla flavour", "No added sugar", "Contains omega-3, fiber, CLA, and Garcinia cambogia"],
         additional_description: `<p><strong>Why choose SALLYPRO D DIABESITY POWDER?</strong></p>\n<ul>\n<li>Formulated for weight management and metabolic support.</li>\n<li>Contains Omega 3, CLA, Garcinia Cambogia, and high fiber.</li>\n<li>Supports healthy carbohydrate metabolism and antioxidant defense.</li>\n<li>No added sugar, suitable for daily use.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with water or milk, stir well, and consume daily or as directed by your healthcare professional.</p>`,
         image: "/01.png",
         features: [

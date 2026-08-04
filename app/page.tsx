@@ -84,11 +84,7 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div className="relative flex min-h-[360px] items-center justify-center md:min-h-[500px] md:justify-end">
-            <div
-              aria-hidden
-              className="absolute right-[3%] top-1/2 aspect-square w-[86%] max-w-[510px] -translate-y-1/2 bg-[color:var(--mist)]"
-            />
+          <div className="relative flex min-h-[360px] flex-col items-center justify-center md:min-h-[500px] md:items-end">
             <div className="relative z-10 w-[86%] max-w-[500px] -translate-x-[2%] translate-y-[-3%] sm:w-[76%] md:w-[64%] md:max-w-[390px] md:translate-x-[-1%]">
               <div className="overflow-hidden shadow-[0_22px_40px_rgba(34,48,43,0.18)]">
                 <Image
@@ -108,6 +104,33 @@ export default function Home() {
                 formulated for real conditions
               </p>
             </div>
+            <aside className="mt-8 w-full max-w-[500px] border-t border-[color:var(--ink)]/15 pt-5 md:mt-6 md:w-[76%]">
+              <div className="flex items-center justify-between">
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[color:var(--text)]/70">
+                  Clinical focus
+                </p>
+                <span className="text-[11px] tracking-[0.2em] text-[color:var(--text)]/50">
+                  01—03
+                </span>
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3 md:grid-cols-1 md:gap-2">
+                {segments.map((segment, index) => (
+                  <div key={segment.name} className="flex items-baseline gap-3">
+                    <span className="text-[11px] font-medium tracking-[0.16em] text-[color:var(--nav-ink)]/50">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <p className="text-[17px] leading-tight text-[color:var(--ink)]" style={serif}>
+                        {segment.name}
+                      </p>
+                      <p className="mt-1 text-[12px] leading-relaxed text-[color:var(--text)]/75">
+                        {segment.body.split(".")[0]}.
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </aside>
           </div>
         </div>
       </section>

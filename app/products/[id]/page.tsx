@@ -51,7 +51,7 @@ export default async function ProductDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const index = parseInt(id);
+  const index = Number.parseInt(id, 10);
   const product = products[index];
 
   if (!product || product.family === "CATALOG") {
@@ -115,6 +115,11 @@ export default async function ProductDetailPage({
             <p className="mt-5 max-w-[56ch] text-[17px] leading-relaxed">
               {product.description}
             </p>
+            {product.detailIntro && (
+              <p className="mt-4 max-w-[56ch] text-[15px] leading-relaxed text-[color:var(--text)]/85">
+                {product.detailIntro}
+              </p>
+            )}
             {product.features && (
               <ul className="mt-6 space-y-2.5 text-[15px]">
                 {product.features.map((f) => (
@@ -148,6 +153,71 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
+      {/* Formula overview */}
+      {(product.benefitAreas?.length || product.qualityNotes?.length) && (
+        <section className="border-y border-[color:var(--ink)]/10 bg-[color:var(--stone)]">
+          <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+            <div className="grid gap-12 md:grid-cols-[1.15fr_0.85fr] md:gap-20">
+              <div>
+                <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--nav-ink)]">
+                  Formula overview
+                </p>
+                <h2
+                  className="mt-4 max-w-xl text-[30px] leading-tight tracking-tight text-[color:var(--ink)] md:text-[38px]"
+                  style={serif}
+                >
+                  Designed around a clear everyday purpose.
+                </h2>
+                <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-[color:var(--text)]">
+                  The formula brings its ingredients together around a defined nutrition goal, making it easier to understand where the product fits into a daily routine.
+                </p>
+                {product.benefitAreas && (
+                  <div className="mt-8 grid gap-3 md:grid-cols-3">
+                    {product.benefitAreas.map((area, areaIndex) => (
+                      <div
+                        key={area}
+                        className="rounded-[20px] border border-[color:var(--ink)]/10 bg-[color:var(--bg)] p-5"
+                      >
+                        <span className="text-[13px] font-medium text-[color:var(--nav-ink)]" style={serif}>
+                          {String(areaIndex + 1).padStart(2, "0")}
+                        </span>
+                        <p className="mt-6 text-[15px] font-medium leading-relaxed text-[color:var(--ink)]">
+                          {area}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {product.qualityNotes && (
+                <div className="rounded-[24px] bg-[color:var(--ink)] p-7 text-[color:var(--bg)] md:p-8">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[color:var(--sage)]">
+                    Product details
+                  </p>
+                  <ul className="mt-6 space-y-4">
+                    {product.qualityNotes.map((note) => (
+                      <li key={note} className="flex gap-3 text-[15px] leading-relaxed text-[color:var(--bg)]/85">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--sage)]" />
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={product.file}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex border-b border-[color:var(--sage)] pb-1 text-[13px] font-medium text-[color:var(--sage)] hover:text-[color:var(--bg)]"
+                  >
+                    Open product document ↗
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Why choose (rich description) */}
       {product.additional_description && (
         <section className="bg-[color:var(--stone)]">
@@ -156,6 +226,47 @@ export default async function ProductDetailPage({
               className="invar-prose text-[16px] leading-relaxed [&>p>strong]:text-[22px] [&>p>strong]:font-normal"
               dangerouslySetInnerHTML={{ __html: product.additional_description }}
             />
+          </div>
+        </section>
+      )}
+
+      {/* Usage and guidance */}
+      {product.usageDetails && (
+        <section>
+          <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+            <div className="grid gap-12 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
+              <div>
+                <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--nav-ink)]">
+                  Everyday use
+                </p>
+                <h2
+                  className="mt-4 text-[30px] leading-tight tracking-tight text-[color:var(--ink)] md:text-[38px]"
+                  style={serif}
+                >
+                  Simple guidance for the routine.
+                </h2>
+                <p className="mt-5 text-[16px] leading-[1.75] text-[color:var(--text)]">
+                  A clear routine helps people use a nutrition product consistently and responsibly.
+                </p>
+              </div>
+              <div>
+                <ol className="divide-y divide-[color:var(--ink)]/10 border-y border-[color:var(--ink)]/10">
+                  {product.usageDetails.map((detail, detailIndex) => (
+                    <li key={detail} className="flex gap-5 py-5">
+                      <span className="text-[14px] font-medium text-[color:var(--nav-ink)]" style={serif}>
+                        {String(detailIndex + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[15px] leading-relaxed text-[color:var(--text)]">
+                        {detail}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-6 rounded-[18px] bg-[color:var(--stone)] p-5 text-[13px] leading-relaxed text-[color:var(--text)]">
+                  Individual nutrition needs vary. Please review the product label and speak with a qualified healthcare professional when you have allergies, take medicines, or are managing a medical condition.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       )}
@@ -196,8 +307,8 @@ export default async function ProductDetailPage({
                     <h3 className="text-[19px] text-[color:var(--ink)]" style={serif}>
                       {ing.name}
                     </h3>
-                    <p className="mt-1.5 max-w-[70ch] text-[14px] leading-relaxed">
-                      {ing.highlights.slice(0, 3).join(" · ")}
+                    <p className="mt-1.5 max-w-[70ch] text-[14px] leading-relaxed text-[color:var(--text)]/85">
+                      {ing.role} {ing.highlights.slice(0, 3).join(" · ")}
                     </p>
                   </div>
                   <span className="hidden text-[14px] font-medium text-[color:var(--nav-ink)] transition-transform group-hover:translate-x-1 md:block">
