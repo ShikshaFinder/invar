@@ -87,7 +87,7 @@ export default function Home() {
           <div className="relative flex min-h-[360px] items-center justify-center md:min-h-[500px] md:justify-end">
             <div
               aria-hidden
-              className="absolute right-[3%] top-[3%] aspect-square w-[86%] max-w-[510px] rounded-full bg-[color:var(--mist)]"
+              className="absolute right-[3%] top-[3%] aspect-square w-[86%] max-w-[510px] bg-[color:var(--mist)]"
             />
             <div className="relative z-10 w-[86%] max-w-[500px] -translate-x-[2%] translate-y-[-3%] sm:w-[76%] md:translate-x-[-1%]">
               <div className="overflow-hidden shadow-[0_22px_40px_rgba(34,48,43,0.18)]">
