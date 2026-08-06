@@ -44,9 +44,22 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="overflow-hidden bg-[color:var(--bg)]">
-        <div className="mx-auto grid min-h-[720px] w-full max-w-[1416px] items-center gap-14 px-6 py-20 sm:px-10 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:py-24 xl:px-0">
-          <div className="max-w-[780px]">
+      <section className="relative isolate overflow-hidden bg-[color:var(--bg)]">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-cover bg-[position:70%_center]"
+          style={{ backgroundImage: "url('/hero-img.png')" }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(249,249,249,0.96) 0%, rgba(249,249,249,0.9) 44%, rgba(249,249,249,0.25) 100%)",
+          }}
+        />
+        <div className="mx-auto grid min-h-[720px] w-full max-w-[1416px] items-center gap-10 px-6 py-20 sm:px-10 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:py-24 xl:px-0">
+          <div className="max-w-[780px] rounded-3xl bg-[color:var(--bg)]/85 p-6 shadow-[0_16px_40px_rgba(34,48,43,0.08)] backdrop-blur-sm sm:p-8 md:-ml-8 md:bg-transparent md:p-8 md:shadow-none md:backdrop-blur-none">
             <p className="text-[12px] font-medium uppercase tracking-[0.26em] text-[#405b67]">
               Therapeutic nutrition, made in India
             </p>
@@ -84,28 +97,9 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div className="relative flex min-h-[360px] flex-col items-center justify-center md:min-h-[500px] md:items-end">
-            <div className="relative z-10 w-[86%] max-w-[500px] -translate-x-[2%] translate-y-[-3%] sm:w-[76%] md:w-[64%] md:max-w-[390px] md:translate-x-[-1%]">
-              <div className="overflow-hidden shadow-[0_22px_40px_rgba(34,48,43,0.18)]">
-                <Image
-                  src="/hero-img.png"
-                  alt="Invar Pharmaceutical supplement bottle and capsules arranged with botanical ingredients"
-                  width={1536}
-                  height={1024}
-                  priority
-                  className="aspect-[4/3] h-auto w-full object-cover"
-                  sizes="(max-width: 767px) 76vw, 38vw"
-                />
-              </div>
-              <p
-                className="mt-6 text-right text-lg italic text-[#405b67] md:mr-[-4%]"
-                style={serif}
-              >
-                formulated for real conditions
-              </p>
-            </div>
-            <aside className="mt-8 w-full max-w-[500px] border-t border-[color:var(--ink)]/15 pt-5 md:mt-6 md:w-[76%]">
-              <div className="flex items-center justify-between">
+          <div className="flex min-h-[300px] items-end justify-end md:min-h-[500px]">
+            <aside className="w-full max-w-[460px] rounded-2xl border border-white/50 bg-white/75 p-5 shadow-[0_16px_40px_rgba(34,48,43,0.14)] backdrop-blur-md md:p-6">
+              <div className="flex items-center justify-between border-b border-[color:var(--ink)]/15 pb-4">
                 <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[color:var(--text)]/70">
                   Clinical focus
                 </p>
