@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Invar Pharmaceutical Pvt Ltd",
     images: [
       {
-        url: "/hero-img.png",
+        url: "/invar-hero.png",
         width: 1536,
         height: 1024,
         alt: "Invar Pharmaceutical supplement bottle and capsules",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Invar Pharmaceutical Pvt Ltd",
     description:
       "Science-based therapeutic nutrition for cardiac care, diabetic management, and maternal health.",
-    images: ["/hero-img.png"],
+    images: ["/invar-hero.png"],
   },
 };
 

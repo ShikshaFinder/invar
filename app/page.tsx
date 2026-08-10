@@ -48,7 +48,7 @@ export default function Home() {
         <div
           aria-hidden
           className="absolute inset-0 -z-20 bg-cover bg-[position:70%_center]"
-          style={{ backgroundImage: "url('/hero-img.png')" }}
+          style={{ backgroundImage: "url('/invar-hero.png')" }}
         />
         <div
           aria-hidden

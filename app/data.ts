@@ -200,7 +200,7 @@ export const products: Product[] = [
         ],
         qualityNotes: ["200 g pack", "Mango flavour", "Enriched with vitamins, minerals, zinc, and DHA"],
         additional_description: `<p><strong>Why choose SALLYPRO Protein Powder (Mango)?</strong></p>\n<ul>\n<li>Delicious mango flavor for enjoyable daily nutrition.</li>\n<li>Supports muscle recovery and growth with high-quality protein.</li>\n<li>Enriched with essential vitamins and minerals for immunity and vitality.</li>\n<li>Contains DHA for brain health.</li>\n</ul>\n<p><strong>Usage:</strong> Mix 1-2 scoops with milk or water, stir well, and consume daily or as directed by your healthcare professional.</p>`,
-        image: "/sallypro.jpeg",
+        image: "/sallypro-mango.png",
         features: [
             "Enriched with Vitamins, Minerals & Zinc",
             "Contains: Calcium, Vitamin D3, Magnesium",
@@ -348,6 +348,30 @@ export const products: Product[] = [
     },
     {
         family: "PRODUCT 4",
+        title: "SALLYPRO C CARDIAC FORMULA",
+        subtitle: "Cardiac Nutrition Formula",
+        description: "A heart-focused nutrition formula with Arjuna and Beetroot for cardiovascular wellness, circulation, antioxidant balance, and inflammation support.",
+        detailIntro: "SALLYPRO C brings together a focused cardiac-nutrition story around traditional botanical and food-derived ingredients, making it easier to support a heart-conscious daily routine.",
+        benefitAreas: ["Cardiovascular wellness", "Circulation support", "Antioxidant and inflammation balance"],
+        usageDetails: [
+            "Use the serving size shown on the product label or as directed by a healthcare professional.",
+            "Take as part of a balanced diet and an individualized cardiac-care plan.",
+            "Speak with a qualified healthcare professional before use if you take medicines or manage a heart condition."
+        ],
+        qualityNotes: ["Heart-focused nutrition formula", "With Arjuna and Beetroot", "Designed for a cardiac-care nutrition story"],
+        additional_description: `<p><strong>Why choose SALLYPRO C CARDIAC FORMULA?</strong></p>\n<ul>\n<li>Designed around cardiovascular wellness and daily nutritional support.</li>\n<li>Features Arjuna and Beetroot, ingredients associated with circulation and antioxidant support.</li>\n<li>Supports a heart-conscious routine alongside balanced nutrition and professional care.</li>\n<li>Convenient format for consistent daily use.</li>\n</ul>\n<p><strong>Usage:</strong> Follow the product label or use as directed by your healthcare professional.</p>`,
+        image: "/invar-c15.jpeg",
+        features: [
+            "Cardiac-focused nutritional support",
+            "With Arjuna and Beetroot",
+            "Supports circulation and antioxidant balance",
+            "Use alongside professional cardiac care"
+        ],
+        file: "/Invar Pdf New.pdf",
+        type: "PDF",
+    },
+    {
+        family: "PRODUCT 5",
         title: "SALLYPRO D DIABESITY POWDER",
         subtitle: "200 gm - Vanilla Flavour",
         description: "Enriched with whey protein, Omega 3, fibers, CLA, Garcinia Cambogia Extract, micronutrients, antioxidants, and vitamins.",

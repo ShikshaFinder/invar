@@ -12,9 +12,9 @@ export default function SiteFooter() {
               <Image
                 src="/Black Invar Logo Png.png"
                 alt="Invar Pharmaceutical"
-                width={40}
-                height={40}
-                className="h-9 w-9 object-contain"
+                width={72}
+                height={72}
+                className="h-16 w-16 object-contain"
               />
               <span className="text-[17px] font-semibold" style={serif}>
                 Invar Pharmaceutical Pvt Ltd
