@@ -360,7 +360,7 @@ export const products: Product[] = [
         ],
         qualityNotes: ["Heart-focused nutrition formula", "With Arjuna and Beetroot", "Designed for a cardiac-care nutrition story"],
         additional_description: `<p><strong>Why choose SALLYPRO C CARDIAC FORMULA?</strong></p>\n<ul>\n<li>Designed around cardiovascular wellness and daily nutritional support.</li>\n<li>Features Arjuna and Beetroot, ingredients associated with circulation and antioxidant support.</li>\n<li>Supports a heart-conscious routine alongside balanced nutrition and professional care.</li>\n<li>Convenient format for consistent daily use.</li>\n</ul>\n<p><strong>Usage:</strong> Follow the product label or use as directed by your healthcare professional.</p>`,
-        image: "/invar-c15.jpeg",
+        image: "/celipro-c.png",
         features: [
             "Cardiac-focused nutritional support",
             "With Arjuna and Beetroot",
