@@ -33,7 +33,7 @@ export default function WhatsAppContact() {
         onClick={handleSend}
         className="mt-4 rounded-full bg-[color:var(--sage)] px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.12em] text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
       >
-        Send via WhatsApp
+        Contact Us
       </button>
     </div>
   );

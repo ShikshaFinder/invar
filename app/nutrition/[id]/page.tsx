@@ -59,6 +59,24 @@ export default async function NutritionPage({
           {product.title}
         </h1>
 
+        {(product.nutrition.heading || product.nutrition.description) && (
+          <div className="mt-8">
+            {product.nutrition.heading && (
+              <h2
+                className="text-[24px] tracking-tight text-[color:var(--ink)]"
+                style={serif}
+              >
+                {product.nutrition.heading}
+              </h2>
+            )}
+            {product.nutrition.description && (
+              <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--text)]/85">
+                {product.nutrition.description}
+              </p>
+            )}
+          </div>
+        )}
+
         <div className="mt-12 space-y-14">
           {product.nutrition.sections.map((section) => (
             <div key={section.title}>
@@ -71,7 +89,7 @@ export default async function NutritionPage({
                 </h2>
               )}
               <div className="overflow-x-auto rounded-2xl border border-[color:var(--ink)]/10 bg-[color:var(--surface)]">
-                <table className="min-w-full">
+                <table className="min-w-[720px]">
                   <thead>
                     <tr className="bg-[color:var(--stone)]">
                       {product.nutrition!.headers.map((header) => (
@@ -107,6 +125,14 @@ export default async function NutritionPage({
               </div>
             </div>
           ))}
+
+          {product.nutrition.notes && (
+            <div className="space-y-2 rounded-2xl bg-[color:var(--stone)] p-5 text-[13px] leading-relaxed text-[color:var(--text)]">
+              {product.nutrition.notes.map((note) => (
+                <p key={note}>{note}</p>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

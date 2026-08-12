@@ -37,8 +37,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
-  const catalogIndex = products.findIndex((p) => p.family === "CATALOG");
-
   return (
     <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
       <SiteHeader />
@@ -58,7 +56,7 @@ export default function Home() {
               "linear-gradient(90deg, rgba(249,249,249,0.96) 0%, rgba(249,249,249,0.9) 44%, rgba(249,249,249,0.25) 100%)",
           }}
         />
-        <div className="mx-auto grid min-h-[720px] w-full max-w-[1416px] items-center gap-10 px-6 py-20 sm:px-10 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:py-24 xl:px-0">
+        <div className="mx-auto flex min-h-[720px] w-full max-w-[1416px] items-center px-6 py-20 sm:px-10 md:py-24 xl:px-0">
           <div className="max-w-[780px] rounded-3xl bg-[color:var(--bg)]/85 p-6 shadow-[0_16px_40px_rgba(34,48,43,0.08)] backdrop-blur-sm sm:p-8 md:-ml-8 md:bg-transparent md:p-8 md:shadow-none md:backdrop-blur-none">
             <p className="text-[12px] font-medium uppercase tracking-[0.26em] text-[#405b67]">
               Therapeutic nutrition, made in India
@@ -85,46 +83,7 @@ export default function Home() {
               >
                 Explore products
               </a>
-              {catalogIndex >= 0 && (
-                <a
-                  href={products[catalogIndex].file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[14px] font-medium underline decoration-[color:var(--sage-deep)] underline-offset-4 transition-colors hover:text-[color:var(--ink)]"
-                >
-                  Download the full catalog (PDF)
-                </a>
-              )}
             </div>
-          </div>
-          <div className="flex min-h-[300px] items-end justify-end md:min-h-[500px]">
-            <aside className="w-full max-w-[460px] rounded-2xl border border-white/50 bg-white/75 p-5 shadow-[0_16px_40px_rgba(34,48,43,0.14)] backdrop-blur-md md:p-6">
-              <div className="flex items-center justify-between border-b border-[color:var(--ink)]/15 pb-4">
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[color:var(--text)]/70">
-                  Clinical focus
-                </p>
-                <span className="text-[11px] tracking-[0.2em] text-[color:var(--text)]/50">
-                  01—03
-                </span>
-              </div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3 md:grid-cols-1 md:gap-2">
-                {segments.map((segment, index) => (
-                  <div key={segment.name} className="flex items-baseline gap-3">
-                    <span className="text-[11px] font-medium tracking-[0.16em] text-[color:var(--nav-ink)]/50">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <p className="text-[17px] leading-tight text-[color:var(--ink)]" style={serif}>
-                        {segment.name}
-                      </p>
-                      <p className="mt-1 text-[12px] leading-relaxed text-[color:var(--text)]/75">
-                        {segment.body.split(".")[0]}.
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </aside>
           </div>
         </div>
       </section>

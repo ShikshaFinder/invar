@@ -10,11 +10,14 @@ export interface Product {
     additional_description?: string; // Optional field for extra info box
     features?: string[];
     nutrition?: {
+        heading?: string;
+        description?: string;
         headers: string[];
         sections: {
             title: string;
             items: string[][];
         }[];
+        notes?: string[];
     };
     image?: string;
     file: string;
@@ -368,45 +371,54 @@ export const products: Product[] = [
             "Use alongside professional cardiac care"
         ],
         nutrition: {
-            headers: ["Nutrients", "Per 100g", "Per 30g"],
+            heading: "NUTRITIONAL INFORMATION",
+            description: "Nutrients each serving of per 30 gm contains (Approx.)",
+            headers: ["Nutrient", "Per 100 gm", "Per 30 gm", "% RDA Per Serving"],
             sections: [
                 {
-                    title: "Nutritional Information",
+                    title: "NUTRITIONAL INFORMATION",
                     items: [
-                        ["Energy", "358.9 Kcal", "107.67 Kcal"],
-                        ["Carbohydrate", "75 gm", "22.5 gm"],
-                        ["Protein", "10 gm", "3 gm"],
-                        ["Fat", "2.1 gm", "0.63 gm"],
-                        ["Potassium", "480 mg", "144 mg"],
-                        ["Chloride", "450 mg", "135 mg"],
-                        ["Sodium", "350 mg", "105 mg"],
-                        ["Calcium", "310 mg", "93 mg"],
-                        ["Phosphorus", "300 mg", "90 mg"],
-                        ["Choline", "80 mg", "24 mg"],
-                        ["Magnesium", "60 mg", "18 mg"],
-                        ["Arjuna Extract", "50 mg", "15 mg"],
-                        ["Beetroot Extract", "25 mg", "7.5 mg"],
-                        ["Niacinamide", "6.5 mg", "1.95 mg"],
-                        ["Vitamin E Acetate", "6 mg", "1.8 mg"],
-                        ["Zinc", "3.5 mg", "1.05 mg"],
-                        ["Vitamin B6", "0.8 mg", "0.24 mg"],
-                        ["Vitamin B2", "0.72 mg", "0.216 mg"],
-                        ["Vitamin B1", "0.65 mg", "0.195 mg"],
-                        ["Copper", "235 mcg", "70.5 mcg"],
-                        ["Folic Acid", "100 mcg", "30 mcg"],
-                        ["Vitamin A (Acetate)", "100 mcg", "30 mcg"],
-                        ["DHA", "80 mg", "24 mg"],
-                        ["Iodine", "40 mcg", "12 mcg"],
-                        ["Molybdenum", "30 mcg", "9 mcg"],
-                        ["Chromium", "25 mcg", "7.5 mcg"],
-                        ["Vitamin K", "25 mcg", "7.5 mcg"],
-                        ["Selenium", "20 mcg", "6 mcg"],
-                        ["Biotin", "12.3 mcg", "3.69 mcg"],
-                        ["Cholecalciferol", "4.2 mcg", "1.26 mcg"],
-                        ["Vitamin B12", "1 mcg", "0.3 mcg"],
-                        ["Manganese", "1 mg", "0.3 mg"]
+                        ["Energy", "358.9 Kcal", "107.67 Kcal", "5.38%"],
+                        ["Carbohydrate", "75 gm", "22.5 gm", "**"],
+                        ["Protein", "10 gm", "3 gm", "5.55%"],
+                        ["Fat", "2.1 gm", "0.63 gm", "**"],
+                        ["Potassium", "480 mg", "144 mg", "4.11%"],
+                        ["Chloride", "450 mg", "135 mg", "5.86%"],
+                        ["Sodium", "350 mg", "105 mg", "5.25%"],
+                        ["Calcium", "310 mg", "93 mg", "9.3%"],
+                        ["Phosphorus", "300 mg", "90 mg", "9%"],
+                        ["Choline", "80 mg", "24 mg", "**"],
+                        ["Magnesium", "60 mg", "18 mg", "4.09%"],
+                        ["Arjuna", "50 mg", "15 mg", "**"],
+                        ["Beet Root Extract", "25 mg", "7.5 mg", "**"],
+                        ["Niacinamide", "6.5 mg", "1.95 mg", "10.83%"],
+                        ["Vitamin E Acetate", "6 mg", "1.8 mg", "16.3%"],
+                        ["Zinc", "3.5 mg", "1.05 mg", "6.17%"],
+                        ["Vitamin B6", "0.8 mg", "0.24 mg", "10%"],
+                        ["Vitamin B2", "0.72 mg", "0.216 mg", "8.64%"],
+                        ["Vitamin B1", "0.65 mg", "0.195 mg", "10.83%"],
+                        ["Copper", "235 mcg", "70.5 mcg", "4.14%"],
+                        ["Folic acid", "100 mcg", "30 mcg", "10%"],
+                        ["Vitamin A (Acetate)", "100 mcg", "30 mcg", "3%"],
+                        ["DHA", "80 mcg", "24 mcg", "**"],
+                        ["Iodine", "40 mcg", "12 mcg", "8.57%"],
+                        ["Molybdenum", "30 mcg", "9 mcg", "20%"],
+                        ["Chromium", "25 mcg", "7.5 mcg", "15%"],
+                        ["Vitamin K", "25 mcg", "7.5 mcg", "13.63%"],
+                        ["Selenium", "20 mcg", "6 mcg", "15%"],
+                        ["Biotin", "12.3 mcg", "3.69 mcg", "9.22%"],
+                        ["Cholecalciferol", "4.2 mcg", "1.26 mcg", "8.4%"],
+                        ["Vitamin B12", "1.0 mcg", "0.3 mcg", "13.63%"],
+                        ["Manganese", "1.0 mcg", "0.3 mcg", "0.007%"],
+                        ["Excipients", "Q.S.", "Q.S.", "-"]
                     ]
                 }
+            ],
+            notes: [
+                "* % of RDA Calculated based on ICMR Guidelines",
+                "** No RDA established",
+                "CONTAINS ADDED FLAVOUR",
+                "Overages of Vitamins added to compensate loss on storage."
             ]
         },
         file: "/Invar Pdf New.pdf",

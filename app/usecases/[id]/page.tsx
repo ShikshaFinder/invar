@@ -76,7 +76,7 @@ export default async function UseCasePage({
           href="/#contact"
           className="mt-10 inline-block rounded-full bg-[color:var(--sage)] px-7 py-3.5 text-[14px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
         >
-          Ask us about this product
+          Contact Us
         </Link>
       </section>
 

@@ -32,7 +32,7 @@ export default function SiteHeader() {
           href="/#contact"
           className="rounded-full bg-[color:var(--sage)] px-5 py-2.5 text-[13px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
         >
-          Contact us
+          Contact Us
         </Link>
       </nav>
     </header>

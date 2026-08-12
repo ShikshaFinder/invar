@@ -138,7 +138,7 @@ export default async function ProductDetailPage({
                 href="/#contact"
                 className="rounded-full bg-[color:var(--sage)] px-7 py-3.5 text-[14px] font-medium text-[color:var(--ink)] transition-colors hover:bg-[color:var(--sage-deep)]"
               >
-                Enquire now
+                Contact Us
               </Link>
               {product.nutrition && (
                 <Link
